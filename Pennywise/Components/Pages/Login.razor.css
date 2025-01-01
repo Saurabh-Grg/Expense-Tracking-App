@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1f8f1;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+}
+
+h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+p.intro {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+.form-note {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    color: #555;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #4CAF50;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }

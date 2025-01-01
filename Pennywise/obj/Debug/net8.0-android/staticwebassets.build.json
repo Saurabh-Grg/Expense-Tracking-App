@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nuZgos1fmxfZeqtfBYYOnz92cOApW52P0R96hfvRrKI=",
+  "Hash": "/RsPPkBHDLgjn03g7GEDbCTpKFu/Jdgd7xRyh+Od0QY=",
   "Source": "Pennywise",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "6adnrt9fjf",
-      "Integrity": "/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0=",
+      "Fingerprint": "5b6auebfxv",
+      "Integrity": "cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "6adnrt9fjf",
-      "Integrity": "/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0=",
+      "Fingerprint": "5b6auebfxv",
+      "Integrity": "cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css"
@@ -576,7 +576,7 @@
       ]
     },
     {
-      "Route": "Pennywise.6adnrt9fjf.bundle.scp.css",
+      "Route": "Pennywise.5b6auebfxv.bundle.scp.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -586,7 +586,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5481"
+          "Value": "8827"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0=\""
+          "Value": "\"cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 00:37:34 GMT"
+          "Value": "Wed, 01 Jan 2025 03:53:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,7 +608,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6adnrt9fjf"
+          "Value": "5b6auebfxv"
         },
         {
           "Name": "label",
@@ -616,12 +616,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0="
+          "Value": "sha256-cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s="
         }
       ]
     },
     {
-      "Route": "Pennywise.6adnrt9fjf.styles.css",
+      "Route": "Pennywise.5b6auebfxv.styles.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -631,7 +631,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5481"
+          "Value": "8827"
         },
         {
           "Name": "Content-Type",
@@ -639,11 +639,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0=\""
+          "Value": "\"cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 00:37:34 GMT"
+          "Value": "Wed, 01 Jan 2025 03:53:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -653,7 +653,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6adnrt9fjf"
+          "Value": "5b6auebfxv"
         },
         {
           "Name": "label",
@@ -661,7 +661,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0="
+          "Value": "sha256-cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s="
         }
       ]
     },
@@ -676,7 +676,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5481"
+          "Value": "8827"
         },
         {
           "Name": "Content-Type",
@@ -684,11 +684,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0=\""
+          "Value": "\"cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 00:37:34 GMT"
+          "Value": "Wed, 01 Jan 2025 03:53:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -698,7 +698,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0="
+          "Value": "sha256-cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s="
         }
       ]
     },
@@ -713,7 +713,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5481"
+          "Value": "8827"
         },
         {
           "Name": "Content-Type",
@@ -721,11 +721,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0=\""
+          "Value": "\"cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 00:37:34 GMT"
+          "Value": "Wed, 01 Jan 2025 03:53:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +735,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/oHF6IN8L2U5RzCk6FI55cF0iXp6OOFfDggjP3vdbD0="
+          "Value": "sha256-cYQF+465gFtERKJQjL+r9Y9UWqGKRSCJDn88BhFbW+s="
         }
       ]
     }

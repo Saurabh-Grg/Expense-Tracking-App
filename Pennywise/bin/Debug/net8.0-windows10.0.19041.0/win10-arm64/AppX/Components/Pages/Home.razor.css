@@ -1,0 +1,42 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f8f1; /* Light greenish background */
+    color: #333;
+    text-align: center;
+}
+
+.app-name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4CAF50; /* Green theme for title */
+    margin-bottom: 10px;
+}
+
+.app-slogan {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50; /* Green button */
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .login-button:hover {
+        background-color: #45a049; /* Slightly darker green */
+    }

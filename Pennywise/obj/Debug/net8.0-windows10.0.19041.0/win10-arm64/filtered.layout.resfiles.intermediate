@@ -1,5 +1,8 @@
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\Dashboard.razor.css
+Components\Pages\Home.razor.css
+Components\Pages\Login.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
@@ -58,7 +61,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\Pennywise.styles.css
-wwwroot\Pennywise.6adnrt9fjf.bundle.scp.css
+wwwroot\Pennywise.c5x0nv31oo.bundle.scp.css
 AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css

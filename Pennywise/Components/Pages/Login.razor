@@ -1,5 +1,77 @@
-﻿<h3>Login</h3>
+﻿@page "/login"
+@inject NavigationManager Navigator
+
+<div class="container">
+    <h2>Welcome to Pennywise</h2>
+    <p class="intro">Your smart solution for tracking personal expenses.</p>
+
+    <EditForm Model="@userModel" OnValidSubmit="SavePreferences">
+        <!-- Username Field -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <InputText id="username" class="form-control"
+                       @bind-Value="userModel.Username"
+                       placeholder="This username will identify you within the app."
+                       aria-label="Enter your preferred username" required />
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <InputText id="password" type="password" class="form-control"
+                       @bind-Value="userModel.Password"
+                       placeholder="Must be at least 8 characters long."
+                       aria-label="Enter a secure password" required />
+            <div class="tooltip">
+                <span class="tooltiptext">Include a mix of letters, numbers, and symbols for better security.</span>
+            </div>
+        </div>
+
+        <!-- Currency Selection -->
+        <div class="form-group">
+            <label for="currency">Preferred Currency</label>
+            <InputSelect id="currency" class="form-control" @bind-Value="userModel.Currency" required>
+                <option value="" disabled selected>Choose your preferred currency</option>
+                <option value="NRS">NRS - Nepalese Rupee</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+            </InputSelect>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn">Save & Get Started</button>
+    </EditForm>
+
+    <p class="form-note">By signing up, you agree to our <a href="#">Terms & Conditions</a>.</p>
+</div>
 
 @code {
+    private UserModel userModel = new UserModel();
 
+    private async Task SavePreferences()
+    {
+        if (!string.IsNullOrWhiteSpace(userModel.Username) &&
+            !string.IsNullOrWhiteSpace(userModel.Password) &&
+            !string.IsNullOrWhiteSpace(userModel.Currency))
+        {
+            // Redirect to dashboard (or replace with your navigation logic)
+            Navigator.NavigateTo("/dashboard");
+        }
+        else
+        {
+            Console.WriteLine("All fields are required.");
+        }
+    }
+
+    public class UserModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Currency { get; set; } = string.Empty;
+    }
 }
