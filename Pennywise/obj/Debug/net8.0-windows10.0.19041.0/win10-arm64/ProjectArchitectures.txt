@@ -1,0 +1,1 @@
+C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Pennywise.csproj;arm64
