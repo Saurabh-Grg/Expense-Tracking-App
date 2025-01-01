@@ -226,6 +226,9 @@
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Data\user.json">
+      <PackagePath>Components\Data\user.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\Pennywise.deps.json">
       <PackagePath>Pennywise.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -509,7 +512,7 @@
       <PackagePath>wwwroot\Pennywise.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\projectbundle\Pennywise.bundle.scp.css">
-      <PackagePath>wwwroot\Pennywise.c5x0nv31oo.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\Pennywise.4xm7ta6t3a.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>

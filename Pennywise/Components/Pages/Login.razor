@@ -1,77 +1,84 @@
 ﻿@page "/login"
+@using Pennywise.Components.Models
+@using Pennywise.Components.Helpers
+@using System.Diagnostics
 @inject NavigationManager Navigator
 
-<div class="container">
-    <h2>Welcome to Pennywise</h2>
-    <p class="intro">Your smart solution for tracking personal expenses.</p>
+@if (loginError)
+{
+    <div class="alert alert-danger">
+        Invalid credentials. Please try again.
+    </div>
+}
 
-    <EditForm Model="@userModel" OnValidSubmit="SavePreferences">
-        <!-- Username Field -->
-        <div class="form-group">
-            <label for="username">Username</label>
-            <InputText id="username" class="form-control"
-                       @bind-Value="userModel.Username"
-                       placeholder="This username will identify you within the app."
-                       aria-label="Enter your preferred username" required />
-        </div>
+<body>
+    <div class="container">
+        <h2>Welcome to Pennywise</h2>
+        <p class="intro">Your smart solution for tracking personal expenses.</p>
 
-        <!-- Password Field -->
-        <div class="form-group">
-            <label for="password">Password</label>
-            <InputText id="password" type="password" class="form-control"
-                       @bind-Value="userModel.Password"
-                       placeholder="Must be at least 8 characters long."
-                       aria-label="Enter a secure password" required />
-            <div class="tooltip">
-                <span class="tooltiptext">Include a mix of letters, numbers, and symbols for better security.</span>
+        <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <InputText id="username" class="form-control" @bind-Value="loginModel.Username" placeholder="This username will identify you within the app." aria-label="Enter your preferred username" required />
             </div>
-        </div>
 
-        <!-- Currency Selection -->
-        <div class="form-group">
-            <label for="currency">Preferred Currency</label>
-            <InputSelect id="currency" class="form-control" @bind-Value="userModel.Currency" required>
-                <option value="" disabled selected>Choose your preferred currency</option>
-                <option value="NRS">NRS - Nepalese Rupee</option>
-                <option value="USD">USD - US Dollar</option>
-                <option value="EUR">EUR - Euro</option>
-                <option value="GBP">GBP - British Pound</option>
-                <option value="INR">INR - Indian Rupee</option>
-                <option value="AUD">AUD - Australian Dollar</option>
-                <option value="JPY">JPY - Japanese Yen</option>
-                <option value="CAD">CAD - Canadian Dollar</option>
-            </InputSelect>
-        </div>
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <InputText id="password" type="password" class="form-control" @bind-Value="loginModel.Password" placeholder="Must be at least 8 characters long." aria-label="Enter a secure password" required />
+            </div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="btn">Save & Get Started</button>
-    </EditForm>
+            <!-- Currency Selection -->
+            <div class="form-group">
+                <label for="currency">Preferred Currency</label>
+                <InputSelect id="currency" class="form-control" @bind-Value="loginModel.PreferredCurrency" required>
+                    <option value="" disabled selected>Choose your preferred currency</option>
+                    <option value="NRS">NRS - Nepalese Rupee</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                </InputSelect>
+            </div>
 
-    <p class="form-note">By signing up, you agree to our <a href="#">Terms & Conditions</a>.</p>
-</div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn">Save & Get Started</button>
+        </EditForm>
+
+        <p class="form-note">By signing up, you agree to our <a href="#">Terms & Conditions</a>.</p>
+    </div>
+</body>
 
 @code {
-    private UserModel userModel = new UserModel();
+    private User loginModel = new User();
+    private bool loginError = false;
 
-    private async Task SavePreferences()
+    private void HandleLogin()
     {
-        if (!string.IsNullOrWhiteSpace(userModel.Username) &&
-            !string.IsNullOrWhiteSpace(userModel.Password) &&
-            !string.IsNullOrWhiteSpace(userModel.Currency))
+        var storedUser = UserStorage.LoadUser();
+
+        if (storedUser != null)
         {
-            // Redirect to dashboard (or replace with your navigation logic)
-            Navigator.NavigateTo("/dashboard");
+
+            if (storedUser.Username == loginModel.Username && storedUser.Password == loginModel.Password && storedUser.PreferredCurrency == loginModel.PreferredCurrency)
+            {
+                // Redirect to dashboard
+                Navigator.NavigateTo("/dashboard");
+            }
+            else
+            {
+                // Display error message if login fails
+                loginError = true;
+            }
         }
         else
         {
-            Console.WriteLine("All fields are required.");
+            // Display error message if no stored user is found
+            loginError = true;
         }
-    }
-
-    public class UserModel
-    {
-        public string Username { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public string Currency { get; set; } = string.Empty;
     }
 }

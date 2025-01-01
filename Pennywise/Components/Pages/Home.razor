@@ -1,11 +1,13 @@
 ﻿@page "/"
 @inject NavigationManager Navigator
 
-<div>
-    <div class="app-name">Pennywise</div>
-    <div class="app-slogan">Because every transaction counts.</div>
-    <button @onclick="NavigateToLogin" class="login-button">Go to Login</button>
-</div>
+<body>
+    <div class="container">
+        <div class="app-name">Pennywise</div>
+        <div class="app-slogan">Because every transaction counts.</div>
+        <button @onclick="NavigateToLogin" class="login-button">Go to Login</button>
+    </div>
+</body>
 
 @code {
     private void NavigateToLogin()

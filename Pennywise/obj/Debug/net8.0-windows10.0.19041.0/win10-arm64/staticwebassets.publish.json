@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ChHP/Jdbg9qQkk/lQ9F2dXQJi1jH3V2dEbjk/AmzZD8=",
+  "Hash": "qstCZ2GL6GF4dbXA7xyV2VtoRkDSjaSQk3XfleOWOVc=",
   "Source": "Pennywise",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "c5x0nv31oo",
-      "Integrity": "MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=",
+      "Fingerprint": "4xm7ta6t3a",
+      "Integrity": "yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\bundle\\Pennywise.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "c5x0nv31oo",
-      "Integrity": "MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=",
+      "Fingerprint": "4xm7ta6t3a",
+      "Integrity": "yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css"
@@ -576,6 +576,96 @@
       ]
     },
     {
+      "Route": "Pennywise.4xm7ta6t3a.bundle.scp.css",
+      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Jan 2025 15:42:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4xm7ta6t3a"
+        },
+        {
+          "Name": "label",
+          "Value": "Pennywise.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0="
+        }
+      ]
+    },
+    {
+      "Route": "Pennywise.4xm7ta6t3a.styles.css",
+      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\bundle\\Pennywise.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Jan 2025 15:42:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4xm7ta6t3a"
+        },
+        {
+          "Name": "label",
+          "Value": "Pennywise.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0="
+        }
+      ]
+    },
+    {
       "Route": "Pennywise.bundle.scp.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
       "Selectors": [],
@@ -586,7 +676,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "6213"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +684,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 05:16:10 GMT"
+          "Value": "Wed, 01 Jan 2025 15:42:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,97 +698,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
-        }
-      ]
-    },
-    {
-      "Route": "Pennywise.c5x0nv31oo.bundle.scp.css",
-      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6193"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 05:16:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c5x0nv31oo"
-        },
-        {
-          "Name": "label",
-          "Value": "Pennywise.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
-        }
-      ]
-    },
-    {
-      "Route": "Pennywise.c5x0nv31oo.styles.css",
-      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\bundle\\Pennywise.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6193"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 05:16:10 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c5x0nv31oo"
-        },
-        {
-          "Name": "label",
-          "Value": "Pennywise.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0="
         }
       ]
     },
@@ -713,7 +713,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "6213"
         },
         {
           "Name": "Content-Type",
@@ -721,11 +721,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 05:16:10 GMT"
+          "Value": "Wed, 01 Jan 2025 15:42:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +735,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0="
         }
       ]
     }

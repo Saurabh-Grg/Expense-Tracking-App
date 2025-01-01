@@ -5,7 +5,7 @@ body[b-htgz6radr3] {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #f1f8f1;
     color: #333;
 }
@@ -24,6 +24,7 @@ h2[b-htgz6radr3] {
     color: #4CAF50;
     margin-bottom: 10px;
     font-size: 24px;
+    font-weight: bold;
 }
 
 p.intro[b-htgz6radr3] {

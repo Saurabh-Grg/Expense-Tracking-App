@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>c5x0nv31oo</Fingerprint>
-      <Integrity>MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=</Integrity>
+      <Fingerprint>4xm7ta6t3a</Fingerprint>
+      <Integrity>yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Pennywise.styles.css'))</OriginalItemSpec>

@@ -3,7 +3,7 @@
   "ManifestType": "Publish",
   "Endpoints": [
     {
-      "Route": "Pennywise.c5x0nv31oo.styles.css",
+      "Route": "Pennywise.4xm7ta6t3a.styles.css",
       "AssetFile": "Pennywise.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "6213"
         },
         {
           "Name": "Content-Type",
@@ -25,21 +25,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 05:16:10 GMT"
+          "Value": "Wed, 01 Jan 2025 15:42:23 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c5x0nv31oo"
+          "Value": "4xm7ta6t3a"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0="
         },
         {
           "Name": "label",
@@ -62,7 +62,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "6213"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +70,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 05:16:10 GMT"
+          "Value": "Wed, 01 Jan 2025 15:42:23 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0="
         }
       ]
     },
