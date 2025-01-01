@@ -215,3 +215,7 @@ C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0
 C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\Components\Pages\Login.razor.rz.scp.css
 C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\Components\Pages\Dashboard.razor.rz.scp.css
 C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\Components\Data\user.json
+C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\Components\Pages\Transactions.razor.rz.scp.css
+C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\Components\Pages\AddTransaction.razor.rz.scp.css
+C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\Components\Data\transactions.json
+C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\Components\Pages\Debts.razor.rz.scp.css

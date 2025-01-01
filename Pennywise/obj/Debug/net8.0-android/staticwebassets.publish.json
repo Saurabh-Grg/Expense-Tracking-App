@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+4tDtpUafgWTKFyap6gUCXtKgpD9xmuCCepI/yAZ4gE=",
+  "Hash": "bj57O71c0R3AB6f/tvssuuGQ5xxamGFPSRgSPV3SbjM=",
   "Source": "Pennywise",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "c5x0nv31oo",
-      "Integrity": "MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=",
+      "Fingerprint": "l7sk9j31g3",
+      "Integrity": "0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "c5x0nv31oo",
-      "Integrity": "MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=",
+      "Fingerprint": "l7sk9j31g3",
+      "Integrity": "0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css"
@@ -157,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "agtyq6xza1",
-      "Integrity": "msvEDR4vKyFBgRHjzCylBhdz9GqKfaxqLKlcHJE2bus=",
+      "Fingerprint": "6g6zlkvjaz",
+      "Integrity": "mj+gXPct7KyPXhuFi4oiNj6W43QPf70qgOtiLQsxpiY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -494,7 +494,7 @@
       ]
     },
     {
-      "Route": "index.agtyq6xza1.html",
+      "Route": "index.6g6zlkvjaz.html",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -504,7 +504,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "875"
+          "Value": "981"
         },
         {
           "Name": "Content-Type",
@@ -512,11 +512,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"msvEDR4vKyFBgRHjzCylBhdz9GqKfaxqLKlcHJE2bus=\""
+          "Value": "\"mj+gXPct7KyPXhuFi4oiNj6W43QPf70qgOtiLQsxpiY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 00:31:18 GMT"
+          "Value": "Wed, 01 Jan 2025 16:46:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -526,7 +526,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "agtyq6xza1"
+          "Value": "6g6zlkvjaz"
         },
         {
           "Name": "label",
@@ -534,7 +534,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-msvEDR4vKyFBgRHjzCylBhdz9GqKfaxqLKlcHJE2bus="
+          "Value": "sha256-mj+gXPct7KyPXhuFi4oiNj6W43QPf70qgOtiLQsxpiY="
         }
       ]
     },
@@ -549,7 +549,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "875"
+          "Value": "981"
         },
         {
           "Name": "Content-Type",
@@ -557,11 +557,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"msvEDR4vKyFBgRHjzCylBhdz9GqKfaxqLKlcHJE2bus=\""
+          "Value": "\"mj+gXPct7KyPXhuFi4oiNj6W43QPf70qgOtiLQsxpiY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 00:31:18 GMT"
+          "Value": "Wed, 01 Jan 2025 16:46:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -571,7 +571,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-msvEDR4vKyFBgRHjzCylBhdz9GqKfaxqLKlcHJE2bus="
+          "Value": "sha256-mj+gXPct7KyPXhuFi4oiNj6W43QPf70qgOtiLQsxpiY="
         }
       ]
     },
@@ -586,7 +586,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "8804"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:25:31 GMT"
+          "Value": "Wed, 01 Jan 2025 23:48:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,12 +608,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc="
         }
       ]
     },
     {
-      "Route": "Pennywise.c5x0nv31oo.bundle.scp.css",
+      "Route": "Pennywise.l7sk9j31g3.bundle.scp.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -623,7 +623,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "8804"
         },
         {
           "Name": "Content-Type",
@@ -631,11 +631,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:25:31 GMT"
+          "Value": "Wed, 01 Jan 2025 23:48:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -645,7 +645,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c5x0nv31oo"
+          "Value": "l7sk9j31g3"
         },
         {
           "Name": "label",
@@ -653,12 +653,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc="
         }
       ]
     },
     {
-      "Route": "Pennywise.c5x0nv31oo.styles.css",
+      "Route": "Pennywise.l7sk9j31g3.styles.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -668,7 +668,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "8804"
         },
         {
           "Name": "Content-Type",
@@ -676,11 +676,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:25:31 GMT"
+          "Value": "Wed, 01 Jan 2025 23:48:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -690,7 +690,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c5x0nv31oo"
+          "Value": "l7sk9j31g3"
         },
         {
           "Name": "label",
@@ -698,7 +698,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc="
         }
       ]
     },
@@ -713,7 +713,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6193"
+          "Value": "8804"
         },
         {
           "Name": "Content-Type",
@@ -721,11 +721,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA=\""
+          "Value": "\"0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:25:31 GMT"
+          "Value": "Wed, 01 Jan 2025 23:48:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +735,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MJVkpuJSj026s26yeZVkQDY8xby0cYDuoYjeACl/YWA="
+          "Value": "sha256-0RC3yqMcN1M2Rnqx39MBV03jb8Fh4qlAkI7iEPrmyoc="
         }
       ]
     }

@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>agtyq6xza1</Fingerprint>
-      <Integrity>msvEDR4vKyFBgRHjzCylBhdz9GqKfaxqLKlcHJE2bus=</Integrity>
+      <Fingerprint>6g6zlkvjaz</Fingerprint>
+      <Integrity>mj+gXPct7KyPXhuFi4oiNj6W43QPf70qgOtiLQsxpiY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>4xm7ta6t3a</Fingerprint>
-      <Integrity>yLTZNw8XW8N+2NYMPy6VKOjBGbTmsrh3EenT3VPEtZ0=</Integrity>
+      <Fingerprint>tofn0gwifk</Fingerprint>
+      <Integrity>LW+cOLlCCL5qqbBKsuGvzKtkas6ahoFv2OQi6EQSu44=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Pennywise.styles.css'))</OriginalItemSpec>

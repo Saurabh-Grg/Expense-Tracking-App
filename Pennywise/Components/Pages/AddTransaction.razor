@@ -1,0 +1,157 @@
+﻿@page "/add-transaction"
+@using Pennywise.Components.Layout
+@using System.Text.Json
+@layout LayoutWithNavmenu
+@using Pennywise.Components.Models
+@using Pennywise.Components.Helpers
+@inject NavigationManager Navigator
+@using System.Diagnostics
+
+<body>
+    <h3>Add New Transaction</h3>
+
+    <EditForm Model="@newTransaction" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <!-- Title -->
+        <div class="form-group">
+            <label for="title">Title</label>
+            <InputText id="title" class="form-control" @bind-Value="newTransaction.Title" required />
+        </div>
+
+        <!-- Amount -->
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <InputNumber id="amount" class="form-control" @bind-Value="newTransaction.Amount" required />
+        </div>
+
+        <!-- Type -->
+        <div class="form-group">
+            <label for="type">Type</label>
+            <InputSelect id="type" class="form-control" @bind-Value="newTransaction.Type" required>
+                <option value="" disabled selected>Select transaction type</option>
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+            </InputSelect>
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+            <label for="date">Date</label>
+            <InputDate id="date" class="form-control" @bind-Value="newTransaction.Date" required />
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+            <label for="category">Category</label>
+            <InputText id="category" class="form-control" @bind-Value="newTransaction.Category" required />
+        </div>
+
+        <!-- Tags -->
+        <div class="form-group">
+            <label for="tags">Tags</label>
+            <InputText id="tags" class="form-control" @bind-Value="newTransaction.Tags" placeholder="Comma-separated tags" />
+        </div>
+
+        <!-- Notes -->
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <InputText id="notes" class="form-control" @bind-Value="newTransaction.Notes" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+        </div>
+    </EditForm>
+</body>
+
+@code {
+    private Transaction newTransaction = new Transaction { Date = DateTime.Now };
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            var user = UserStorage.LoadUser();
+            if (user == null)
+            {
+                return;
+            }
+            Debug.WriteLine($"User loaded: {user.UserId}");
+
+            // Set the UserId for the transaction
+            newTransaction.UserId = user.UserId.ToString(); // Ensure UserId is a string
+
+            // Generate a unique ID for the transaction
+            newTransaction.Id = Guid.NewGuid().ToString();
+            Debug.WriteLine($"Generated transaction ID: {newTransaction.Id}");
+
+            // Define the path for the transaction data
+            var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+            Debug.WriteLine($"Transaction file path: {filePath}");
+
+            var transactions = new List<Transaction>();
+
+            // Check if the file already exists and load its content
+            if (File.Exists(filePath))
+            {
+                Debug.WriteLine("File exists. Reading data...");
+                var json = await File.ReadAllTextAsync(filePath);
+
+                // Check if file is not empty
+                if (!string.IsNullOrWhiteSpace(json))
+                {
+                    try
+                    {
+                        transactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
+                        Debug.WriteLine($"Loaded {transactions.Count} transactions.");
+                    }
+                    catch (JsonException jsonEx)
+                    {
+                        Debug.WriteLine($"Error parsing JSON: {jsonEx.Message}");
+                        Debug.WriteLine("Initializing transactions as empty list.");
+                        transactions = new List<Transaction>();
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine("File is empty. Initializing transactions as empty list.");
+                }
+                transactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
+                Debug.WriteLine($"Loaded {transactions.Count} transactions.");
+            }
+            else
+            {
+                Debug.WriteLine("File does not exist. Creating a new one.");
+            }
+
+            // Add the new transaction to the list
+            transactions.Add(newTransaction);
+            Debug.WriteLine("Transaction added to the list.");
+
+            // Serialize the transactions list back to JSON
+            var updatedJson = JsonSerializer.Serialize(transactions);
+            Debug.WriteLine("Transactions serialized to JSON.");
+            Debug.WriteLine($"Serialized JSON: {updatedJson}");
+
+            // Save the updated list to the file
+            await File.WriteAllTextAsync(filePath, updatedJson);
+            Debug.WriteLine("Transactions saved to file.");
+
+            // Redirect the user to the transactions page
+            Navigator.NavigateTo("/transactions");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"An error occurred: {ex.Message}");
+            Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
+        }
+    }
+
+    private void Cancel()
+    {
+        Navigator.NavigateTo("/transactions");
+    }
+}

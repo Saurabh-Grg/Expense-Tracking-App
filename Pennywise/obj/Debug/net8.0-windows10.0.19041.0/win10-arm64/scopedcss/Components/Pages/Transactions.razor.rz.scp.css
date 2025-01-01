@@ -1,0 +1,66 @@
+body[b-o38ec3uz9i] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px;
+}
+
+h3[b-o38ec3uz9i] {
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+.transaction-filters[b-o38ec3uz9i] {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    gap: 10px; /* Space between items */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px;
+}
+
+.transaction-summary h5[b-o38ec3uz9i] {
+    margin-bottom: 20px;
+}
+
+.table[b-o38ec3uz9i] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .table th[b-o38ec3uz9i] {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    .table td[b-o38ec3uz9i] {
+        background-color: #f1f8f1;
+        vertical-align: middle;
+    }
+
+.add-transaction-btn[b-o38ec3uz9i] {
+    position: fixed; /* Fix the button's position */
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right side of the screen */
+    background-color: #4CAF50; /* Primary blue */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 25px; /* Add some padding */
+    font-size: 16px; /* Make the text larger */
+    border-radius: 10px; /* Make it more circular */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    /* Hover effect */
+    .add-transaction-btn:hover[b-o38ec3uz9i] {
+        background-color: darkgreen; /* Darker blue on hover */
+        transform: translateY(-2px); /* Slight lift effect */
+    }
+
+    /* Focus effect */
+    .add-transaction-btn:focus[b-o38ec3uz9i] {
+        outline: none; /* Remove focus outline */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus ring */
+    }
+

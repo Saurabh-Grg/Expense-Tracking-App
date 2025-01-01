@@ -1,51 +1,58 @@
-.sidebar[b-16uq8voqdr] {
-    height: 100vh;
+.nav-menu[b-16uq8voqdr] {
+    background-color: #4CAF50;
+    color: white;
+    height: 100%;
     width: 250px;
-    background-color: #4CAF50;
-    color: #ffff;
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
 }
 
-.navbar[b-16uq8voqdr] {
-    background-color: #4CAF50;
+.nav-header[b-16uq8voqdr] {
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-navbar-brand[b-16uq8voqdr] {
-    font-size: 50px;
+    .nav-header h4[b-16uq8voqdr] {
+        color: #fff;
+        font-size: 34px;
+        margin: 0;
+        font-weight: bold; 
+    }
+
+.nav-links[b-16uq8voqdr] {
+    list-style: none;
+    padding: 0;
+    color: white;
     font-weight: bold;
 }
 
-.navbar-toggler[b-16uq8voqdr] {
-    display: none;
-}
-
-.nav-scrollable[b-16uq8voqdr] {
-    flex-grow: 1;
-    overflow-y: auto;
-}
-
-.nav-item[b-16uq8voqdr] {
-    padding: 10px 15px;
-}
-
-    .nav-item .nav-link[b-16uq8voqdr] {
-        color: #ccc;
-        text-decoration: none;
-        font-size: 16px;
+    .nav-links li[b-16uq8voqdr] {
+        margin: 15px 0;
     }
 
-        .nav-item .nav-link:hover[b-16uq8voqdr] {
-            color: #fff;
-        }
+.nav-link[b-16uq8voqdr] {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
 
-    .nav-item .bi[b-16uq8voqdr] {
+    .nav-link:hover[b-16uq8voqdr] {
+        background-color: #34495e;
+        border-radius: 4px;
+    }
+
+    .nav-link i[b-16uq8voqdr] {
         margin-right: 10px;
     }
 
-    /* Optional: You can adjust the hover effect as needed */
-    .nav-item .nav-link.active[b-16uq8voqdr] {
-        background-color: green;
+    .nav-link.active[b-16uq8voqdr] {
+        background-color: darkgreen;
+        border-radius: 4px;
         color: white;
     }
+

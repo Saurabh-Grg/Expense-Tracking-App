@@ -1,3 +1,124 @@
 ﻿@page "/transactions"
+@using Pennywise.Components.Layout
+@layout LayoutWithNavmenu
+@using System.Text.Json
+@using Pennywise.Components.Models
+@using Pennywise.Components.Helpers
+@inject NavigationManager Navigator
 
-<h1>Transactions</h1>
+<body>
+    <h3>Transactions</h3>
+
+<!-- Transaction Filtering -->
+<div class="transaction-filters">
+    <InputText @bind-Value="filterTitle" placeholder="Search by Title" class="form-control" />
+    <InputSelect @bind-Value="filterType" class="form-control">
+        <option value="">All Types</option>
+        <option value="Income">Income</option>
+        <option value="Expense">Expense</option>
+    </InputSelect>
+    <InputText @bind-Value="filterTags" placeholder="Search by Tags" class="form-control" />
+    <InputDate @bind-Value="filterStartDate" class="form-control" />
+    <InputDate @bind-Value="filterEndDate" class="form-control" />
+</div>
+
+<!-- Total Transactions Summary -->
+<div class="transaction-summary">
+    <h5>Total Transactions: @totalTransactions</h5>
+    <h5>Total Balance: @totalBalance</h5>
+</div>
+
+<!-- Transactions Table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Tags</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var transaction in FilteredTransactions)
+            {
+                    <tr>
+                        <td>@transaction.Title</td>
+                        <td>@transaction.Amount</td>
+                        <td>@transaction.Type</td>
+                        <td>@transaction.Date.ToShortDateString()</td>
+                        <td>@transaction.Category</td>
+                        <td>@string.Join(", ", transaction.Tags)</td>
+                        <td>@transaction.Notes</td>
+                        <td>
+                            <button class="btn btn-warning" @onclick="() => EditTransaction(transaction)">Edit</button>
+                            <button class="btn btn-danger" @onclick="() => DeleteTransaction(transaction)">Delete</button>
+                        </td>
+                    </tr>
+            }
+    </tbody>
+</table>
+
+<!-- Add Transaction Button -->
+<button class="btn btn-primary add-transaction-btn" @onclick="NavigateToAddTransactionPage">
+    Add Transaction
+</button>
+</body>
+
+@code {
+    private List<Transaction> transactions = new List<Transaction>();
+    private string filterTitle;
+    private string filterType;
+    private string filterTags;
+    private DateTime? filterStartDate;
+    private DateTime? filterEndDate;
+
+    private int totalTransactions => transactions.Count;
+    private decimal totalBalance => transactions.Sum(t => t.Amount);
+
+    private IEnumerable<Transaction> FilteredTransactions =>
+        transactions
+            .Where(t => (string.IsNullOrEmpty(filterTitle) || t.Title.Contains(filterTitle, StringComparison.OrdinalIgnoreCase)) &&
+                        (string.IsNullOrEmpty(filterType) || t.Type == filterType) &&
+                        (string.IsNullOrEmpty(filterTags) || t.Tags.Contains(filterTags)) &&
+                        (!filterStartDate.HasValue || t.Date >= filterStartDate) &&
+                        (!filterEndDate.HasValue || t.Date <= filterEndDate))
+            .OrderByDescending(t => t.Date);
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = UserStorage.LoadUser();
+        if (user == null)
+        {
+            // Handle missing user scenario
+            return;
+        }
+
+        var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+
+        if (File.Exists(filePath))
+        {
+            var json = await File.ReadAllTextAsync(filePath);
+            var allTransactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
+            transactions = allTransactions.Where(t => t.UserId == user.UserId.ToString()).ToList();
+        }
+    }
+
+    private void NavigateToAddTransactionPage()
+    {
+        Navigator.NavigateTo("/add-transaction");
+    }
+
+    private void EditTransaction(Transaction transaction)
+    {
+        // Logic for editing the transaction
+    }
+
+    private void DeleteTransaction(Transaction transaction)
+    {
+        transactions.Remove(transaction);
+    }
+}

@@ -1,4 +1,5 @@
 {
+    "UserId":  "123",
     "Username": "test",
     "Password": "test",
     "PreferredCurrency": "NRS"

@@ -77,58 +77,89 @@ main[b-mbr9omc6wq] {
     }
 }
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
-.sidebar[b-16uq8voqdr] {
-    height: 100vh;
+.nav-menu[b-16uq8voqdr] {
+    background-color: #4CAF50;
+    color: white;
+    height: 100%;
     width: 250px;
-    background-color: #4CAF50;
-    color: #ffff;
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
 }
 
-.navbar[b-16uq8voqdr] {
-    background-color: #4CAF50;
+.nav-header[b-16uq8voqdr] {
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-navbar-brand[b-16uq8voqdr] {
-    font-size: 50px;
+    .nav-header h4[b-16uq8voqdr] {
+        color: #fff;
+        font-size: 34px;
+        margin: 0;
+        font-weight: bold; 
+    }
+
+.nav-links[b-16uq8voqdr] {
+    list-style: none;
+    padding: 0;
+    color: white;
     font-weight: bold;
 }
 
-.navbar-toggler[b-16uq8voqdr] {
-    display: none;
-}
-
-.nav-scrollable[b-16uq8voqdr] {
-    flex-grow: 1;
-    overflow-y: auto;
-}
-
-.nav-item[b-16uq8voqdr] {
-    padding: 10px 15px;
-}
-
-    .nav-item .nav-link[b-16uq8voqdr] {
-        color: #ccc;
-        text-decoration: none;
-        font-size: 16px;
+    .nav-links li[b-16uq8voqdr] {
+        margin: 15px 0;
     }
 
-        .nav-item .nav-link:hover[b-16uq8voqdr] {
-            color: #fff;
-        }
+.nav-link[b-16uq8voqdr] {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
 
-    .nav-item .bi[b-16uq8voqdr] {
+    .nav-link:hover[b-16uq8voqdr] {
+        background-color: #34495e;
+        border-radius: 4px;
+    }
+
+    .nav-link i[b-16uq8voqdr] {
         margin-right: 10px;
     }
 
-    /* Optional: You can adjust the hover effect as needed */
-    .nav-item .nav-link.active[b-16uq8voqdr] {
-        background-color: green;
+    .nav-link.active[b-16uq8voqdr] {
+        background-color: darkgreen;
+        border-radius: 4px;
         color: white;
     }
+
+/* /Components/Pages/AddTransaction.razor.rz.scp.css */
+body[b-2ahqa2ul6a] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
+}
+
+h3[b-2ahqa2ul6a] {
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+.form-group[b-2ahqa2ul6a] {
+    margin: 10px 20px 10px 10px;
+    font-weight: bold;
+}
+
+.btn-success[b-2ahqa2ul6a] {
+    background-color: #4CAF50;
+}
+
+.btn-success:hover[b-2ahqa2ul6a] {
+    background-color: darkgreen;
+}
 /* /Components/Pages/Dashboard.razor.rz.scp.css */
+/* /Components/Pages/Debts.razor.rz.scp.css */
 /* /Components/Pages/Home.razor.rz.scp.css */
 body[b-dwdvns6771] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -180,7 +211,7 @@ body[b-htgz6radr3] {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #f1f8f1;
     color: #333;
 }
@@ -199,6 +230,7 @@ h2[b-htgz6radr3] {
     color: #4CAF50;
     margin-bottom: 10px;
     font-size: 24px;
+    font-weight: bold;
 }
 
 p.intro[b-htgz6radr3] {
@@ -279,3 +311,70 @@ button[b-htgz6radr3] {
         visibility: visible;
         opacity: 1;
     }
+/* /Components/Pages/Transactions.razor.rz.scp.css */
+body[b-o38ec3uz9i] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px;
+}
+
+h3[b-o38ec3uz9i] {
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+.transaction-filters[b-o38ec3uz9i] {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    gap: 10px; /* Space between items */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px;
+}
+
+.transaction-summary h5[b-o38ec3uz9i] {
+    margin-bottom: 20px;
+}
+
+.table[b-o38ec3uz9i] {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .table th[b-o38ec3uz9i] {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    .table td[b-o38ec3uz9i] {
+        background-color: #f1f8f1;
+        vertical-align: middle;
+    }
+
+.add-transaction-btn[b-o38ec3uz9i] {
+    position: fixed; /* Fix the button's position */
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right side of the screen */
+    background-color: #4CAF50; /* Primary blue */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 25px; /* Add some padding */
+    font-size: 16px; /* Make the text larger */
+    border-radius: 10px; /* Make it more circular */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    /* Hover effect */
+    .add-transaction-btn:hover[b-o38ec3uz9i] {
+        background-color: darkgreen; /* Darker blue on hover */
+        transform: translateY(-2px); /* Slight lift effect */
+    }
+
+    /* Focus effect */
+    .add-transaction-btn:focus[b-o38ec3uz9i] {
+        outline: none; /* Remove focus outline */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus ring */
+    }
+

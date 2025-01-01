@@ -1,9 +1,13 @@
+Components\Data\transactions.json
 Components\Data\user.json
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\AddTransaction.razor.css
 Components\Pages\Dashboard.razor.css
+Components\Pages\Debts.razor.css
 Components\Pages\Home.razor.css
 Components\Pages\Login.razor.css
+Components\Pages\Transactions.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
@@ -62,7 +66,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\Pennywise.styles.css
-wwwroot\Pennywise.4xm7ta6t3a.bundle.scp.css
+wwwroot\Pennywise.tofn0gwifk.bundle.scp.css
 AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css

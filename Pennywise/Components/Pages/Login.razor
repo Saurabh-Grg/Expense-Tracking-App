@@ -1,4 +1,6 @@
 ﻿@page "/login"
+@using Pennywise.Components.Layout
+@layout MainLayout
 @using Pennywise.Components.Models
 @using Pennywise.Components.Helpers
 @using System.Diagnostics
@@ -52,7 +54,7 @@
         <p class="form-note">By signing up, you agree to our <a href="#">Terms & Conditions</a>.</p>
     </div>
 </body>
-
+e
 @code {
     private User loginModel = new User();
     private bool loginError = false;
