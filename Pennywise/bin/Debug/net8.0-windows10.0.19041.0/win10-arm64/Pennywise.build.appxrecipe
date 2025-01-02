@@ -515,7 +515,7 @@
       <PackagePath>wwwroot\Pennywise.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\projectbundle\Pennywise.bundle.scp.css">
-      <PackagePath>wwwroot\Pennywise.5xfljaudjs.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\Pennywise.8sges5im2x.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>

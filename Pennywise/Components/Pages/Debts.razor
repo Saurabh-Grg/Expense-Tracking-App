@@ -3,10 +3,43 @@
 @layout LayoutWithNavmenu
 @inject NavigationManager Navigator
 
-<body>
-	<h1>Debts</h1>
-</body>
+<div>
+    <h3>Manage Debts</h3>
+
+    @* <ul> *@
+    @*     @foreach (var debt in Debts) *@
+    @*     { *@
+    @*         <li> *@
+    @*             <strong>@debt.Title</strong> - Amount: @debt.Amount - Due: @debt.DueDate?.ToString("yyyy-MM-dd") *@
+    @*             @if (!debt.IsCleared) *@
+    @*             { *@
+    @*                 <button @onclick="() => ClearDebt(debt.Id)">Clear Debt</button> *@
+    @*             } *@
+    @*             else *@
+    @*             { *@
+    @*                 <span style="color: green;">(Cleared)</span> *@
+    @*             } *@
+    @*         </li> *@
+    @*     } *@
+    @* </ul> *@
+</div>
 
 @code {
+    // private List<Transaction> Debts = new List<Transaction>();
 
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     var allTransactions = await UserStorage.GetTransactionsAsync();
+    //     Debts = allTransactions.Where(t => t.IsDebt).ToList();
+    // }
+
+    // private async Task ClearDebt(string id)
+    // {
+    //     var debt = Debts.FirstOrDefault(d => d.Id == id);
+    //     if (debt != null)
+    //     {
+    //         debt.IsCleared = true;
+    //         await UserStorage.SaveTransactionsAsync(Debts);
+    //     }
+    // }
 }

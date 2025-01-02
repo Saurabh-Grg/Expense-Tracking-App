@@ -17,6 +17,10 @@ namespace Pennywise.Components.Models
         public string Category { get; set; } // Category of the transaction (e.g., Groceries, Rent)
         public string Tags { get; set; } // List of tags to categorize the transaction
         public string Notes { get; set; } // Notes related to the transaction (optional)
+        public bool IsDebt { get; set; } = false; // Is this transaction a debt?
+        public string DebtSource { get; set; }    // Where the debt is from
+        public DateTime? DueDate { get; set; }    // When is the debt due?
+        public bool IsCleared { get; set; } = false; // Has the debt been cleared?
     }
 }
 
