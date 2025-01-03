@@ -135,6 +135,17 @@ main[b-mbr9omc6wq] {
         color: white;
     }
 
+
+/*    .transaction-navlink {
+        margin: 10px;
+        background-color: red;
+        width: 230px;
+        color: white;
+    }
+
+    .transaction-navlink:active {
+        background-color: darkgreen;
+    }*/
 /* /Components/Pages/AddTransaction.razor.rz.scp.css */
 body[b-2ahqa2ul6a] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -159,7 +170,178 @@ h3[b-2ahqa2ul6a] {
     background-color: darkgreen;
 }
 /* /Components/Pages/Dashboard.razor.rz.scp.css */
+.main-container[b-lnu0508m8a] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
+}
+
+.container[b-lnu0508m8a] {
+    width: 100%;
+    
+}
+
+.row-0[b-lnu0508m8a] {
+    height: 70px;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.row-1[b-lnu0508m8a] {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row1-item1[b-lnu0508m8a] {
+    height: 80%;
+    width: 27%;
+    margin: 2%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row1-item2[b-lnu0508m8a] {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-2[b-lnu0508m8a] {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row2-item1[b-lnu0508m8a] {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row2-item2[b-lnu0508m8a] {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row2-item3[b-lnu0508m8a] {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-3[b-lnu0508m8a] {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row3-item1[b-lnu0508m8a] {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row3-item2[b-lnu0508m8a] {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p[b-lnu0508m8a] {
+    font-weight: bold;
+    font-size: 20px;
+    color: #535453;
+}
+
+.row-4[b-lnu0508m8a] {
+    height: 485px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row4-item1[b-lnu0508m8a] {
+    height: 90%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 50%;
+    margin: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row4-item2[b-lnu0508m8a] {
+    height: 90%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 50%;
+    margin: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* /Components/Pages/Debts.razor.rz.scp.css */
+body[b-s80mwxzd69] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px;
+}
 /* /Components/Pages/Home.razor.rz.scp.css */
 body[b-dwdvns6771] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -311,6 +493,9 @@ button[b-htgz6radr3] {
         visibility: visible;
         opacity: 1;
     }
+/* /Components/Pages/Settings.razor.rz.scp.css */
+body[b-xijolfghkp] {
+}
 /* /Components/Pages/Transactions.razor.rz.scp.css */
 body[b-o38ec3uz9i] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

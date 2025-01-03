@@ -7,6 +7,7 @@ Components\Pages\Dashboard.razor.css
 Components\Pages\Debts.razor.css
 Components\Pages\Home.razor.css
 Components\Pages\Login.razor.css
+Components\Pages\Settings.razor.css
 Components\Pages\Transactions.razor.css
 OpenSans-Regular.ttf
 appicon.ico
@@ -66,7 +67,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\Pennywise.styles.css
-wwwroot\Pennywise.8sges5im2x.bundle.scp.css
+wwwroot\Pennywise.bnprcctvjv.bundle.scp.css
 AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css

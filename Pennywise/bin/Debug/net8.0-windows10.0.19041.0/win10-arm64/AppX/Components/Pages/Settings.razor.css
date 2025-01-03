@@ -1,0 +1,131 @@
+﻿.main-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
+}
+
+.container {
+    width: 100%;
+}
+* {
+    margin: 0;
+}
+
+.heading {
+    font-size: 27px;
+    font-weight: bold;
+    padding-top: 25px;
+    border-top: 1px solid rgb(195, 194, 194);
+}
+
+.sub-heading {
+    margin-top: 5px;
+    padding-bottom: 25px;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.Currency {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 20px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 24px;
+}
+
+    .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 1%;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+    }
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+select,
+input[type="radio"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.currency-label {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.currency-option {
+    margin-bottom: 20px;
+}

@@ -94,8 +94,10 @@
             var user = UserStorage.LoadUser();
             if (user == null)
             {
+                Debug.WriteLine("No user found. Operation aborted.");
                 return;
             }
+
             // Set the UserId for the transaction
             newTransaction.UserId = user.UserId.ToString(); // Ensure UserId is a string
 
@@ -111,25 +113,29 @@
             // Check if the file already exists and load its content
             if (File.Exists(filePath))
             {
+                Debug.WriteLine("File exists. Reading content...");
                 var json = await File.ReadAllTextAsync(filePath);
 
                 // Check if file is not empty
                 if (!string.IsNullOrWhiteSpace(json))
                 {
+                    Debug.WriteLine($"File content before deserialization: {json}");
                     try
                     {
                         transactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
+                        Debug.WriteLine("Deserialization successful.");
                     }
                     catch (JsonException jsonEx)
                     {
+                        Debug.WriteLine($"JSON deserialization error: {jsonEx.Message}");
+                        Debug.WriteLine($"Stack Trace: {jsonEx.StackTrace}");
                         transactions = new List<Transaction>();
                     }
                 }
                 else
                 {
-                    Debug.WriteLine("File is empty. Initializing transactions as empty list.");
+                    Debug.WriteLine("File is empty. Initializing transactions as an empty list.");
                 }
-                transactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
             }
             else
             {
@@ -137,13 +143,24 @@
             }
 
             // Add the new transaction to the list
+            Debug.WriteLine($"Transaction being added: {JsonSerializer.Serialize(newTransaction)}");
             transactions.Add(newTransaction);
 
             // Serialize the transactions list back to JSON
-            var updatedJson = JsonSerializer.Serialize(transactions);
+            var updatedJson = JsonSerializer.Serialize(transactions, new JsonSerializerOptions { WriteIndented = true });
+            Debug.WriteLine($"Updated JSON to be written: {updatedJson}");
 
             // Save the updated list to the file
-            await File.WriteAllTextAsync(filePath, updatedJson);
+            try
+            {
+                await File.WriteAllTextAsync(filePath, updatedJson);
+                Debug.WriteLine("File successfully updated.");
+            }
+            catch (Exception writeEx)
+            {
+                Debug.WriteLine($"Error writing to file: {writeEx.Message}");
+                Debug.WriteLine($"Stack Trace: {writeEx.StackTrace}");
+            }
 
             // Redirect the user to the transactions page
             Navigator.NavigateTo("/transactions");
