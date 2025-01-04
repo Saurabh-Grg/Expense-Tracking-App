@@ -78,7 +78,7 @@ main[b-mbr9omc6wq] {
 }
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
 .nav-menu[b-16uq8voqdr] {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     height: 100%;
     width: 250px;
@@ -97,55 +97,40 @@ main[b-mbr9omc6wq] {
         color: #fff;
         font-size: 34px;
         margin: 0;
-        font-weight: bold; 
+        font-weight: bold;
     }
 
-.nav-links[b-16uq8voqdr] {
+li[b-16uq8voqdr] {
     list-style: none;
-    padding: 0;
+}
+
+button[b-16uq8voqdr] {
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
     color: white;
+    text-align: left;
+    font-size: 15px;
     font-weight: bold;
 }
 
-    .nav-links li[b-16uq8voqdr] {
-        margin: 15px 0;
+    button:hover[b-16uq8voqdr] {
+        background-color: green;
+        border-radius: 5px;
     }
 
-.nav-link[b-16uq8voqdr] {
-    display: flex;
-    align-items: center;
+    button:active[b-16uq8voqdr] {
+        background-color: green;
+        border-radius: 5px;
+    }
+
+i[b-16uq8voqdr] {
+    margin-right: 10px;
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
 }
-
-    .nav-link:hover[b-16uq8voqdr] {
-        background-color: #34495e;
-        border-radius: 4px;
-    }
-
-    .nav-link i[b-16uq8voqdr] {
-        margin-right: 10px;
-    }
-
-    .nav-link.active[b-16uq8voqdr] {
-        background-color: darkgreen;
-        border-radius: 4px;
-        color: white;
-    }
-
-
-/*    .transaction-navlink {
-        margin: 10px;
-        background-color: red;
-        width: 230px;
-        color: white;
-    }
-
-    .transaction-navlink:active {
-        background-color: darkgreen;
-    }*/
 /* /Components/Pages/AddTransaction.razor.rz.scp.css */
 body[b-2ahqa2ul6a] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -453,10 +438,12 @@ button[b-htgz6radr3] {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    font-weight: bold;
 }
 
     button:hover[b-htgz6radr3] {
         background-color: #45a049;
+        color: white;
     }
 
 .form-note[b-htgz6radr3] {
@@ -502,39 +489,61 @@ button[b-htgz6radr3] {
 .container[b-xijolfghkp] {
     width: 100%;
 }
+/** {
+    margin: 0;
+}*/
 
-.section[b-xijolfghkp] {
-    margin-bottom: 30px;
+.heading[b-xijolfghkp] {
+    font-size: 27px;
+    font-weight: bold;
+    padding-top: 25px;
+    border-top: 1px solid rgb(195, 194, 194);
 }
 
-    .section h2[b-xijolfghkp] {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .section p[b-xijolfghkp] {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-.btn[b-xijolfghkp] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.sub-heading[b-xijolfghkp] {
+    margin-top: 5px;
+    padding-bottom: 25px;
 }
 
-    .btn:hover[b-xijolfghkp] {
-        background-color: #45a049;
-    }
+.username[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.password[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+label[b-xijolfghkp] {
+    font-weight: bold;
+}
+
+input[b-xijolfghkp] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.Currency[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.notification[b-xijolfghkp] {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 20px;
+}
 
 .toggle-switch[b-xijolfghkp] {
     position: relative;
-    display: inline-block;
+    display: flex;
     width: 50px;
     height: 24px;
 }
@@ -544,6 +553,15 @@ button[b-htgz6radr3] {
         width: 0;
         height: 0;
     }
+
+button[b-xijolfghkp] {
+    padding: 10px 20px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 1%;
+}
 
 .slider[b-xijolfghkp] {
     position: absolute;
@@ -570,19 +588,29 @@ button[b-htgz6radr3] {
     }
 
 input:checked + .slider[b-xijolfghkp] {
-    background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
     input:checked + .slider[b-xijolfghkp]:before {
         transform: translateX(26px);
     }
 
-select[b-xijolfghkp], input[type="radio"][b-xijolfghkp] {
+select[b-xijolfghkp],
+input[type="radio"][b-xijolfghkp] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-    width: 200px;
+    width: 100%;
+}
+
+.currency-label[b-xijolfghkp] {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.currency-option[b-xijolfghkp] {
+    margin-bottom: 20px;
 }
 /* /Components/Pages/Transactions.razor.rz.scp.css */
 body[b-o38ec3uz9i] {

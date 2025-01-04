@@ -1,1 +1,71 @@
-﻿
+﻿@page "/settings"
+@using Pennywise.Components.Layout
+@layout LayoutWithNavmenu
+@inject NavigationManager Navigator
+
+<div class="main-container">
+    <div class="container">
+        <p class="heading">Settings</p>
+        <p class="sub-heading">Manage your account settings and prefernces</p>
+        <p class="heading">Profile</p>
+        <p class="sub-heading">Update your personal infromation.</p>
+        <div>
+            <div class="username">
+                <label for="username">Username</label>
+                <input type="text" placeholder="username" />
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" placeholder="strong password" />
+            </div>
+        </div>
+        <div>
+            <button>Update Profile</button>
+        </div>
+        <div>
+            <p class="heading">Currency Settings</p>
+            <div class="Currency">
+                <label for="Currency" class="currency-label">Select your preferred currency</label>
+                <select id="currency-settings" class="currency-option">
+                    <option value="" disabled selected>
+                        Choose your preferred currency
+                    </option>
+                    <option value="NRS">NRS - Nepalese Rupee</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                </select>
+            </div>
+            <div>
+                <button>Set Currency</button>
+            </div>
+        </div>
+        <!-- Notification Preferences Section -->
+        <div class="section">
+            <p class="heading">Notification Preferences</p>
+            <div class="notification">
+                <p>Enable reminders for due debts:</p>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="notification-toggle" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <!-- Export Data Section -->
+        <div class="section">
+            <p class="heading">Export Data</p>
+            <p class="sub-heading">Select the format to export your data:</p>
+            <button onclick="exportData('csv')">Export as CSV</button>
+            <button onclick="exportData('excel')">Export as Excel</button>
+            <button onclick="exportData('json')">Export as JSON</button>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

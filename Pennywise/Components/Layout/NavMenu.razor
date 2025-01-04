@@ -1,55 +1,81 @@
 ﻿@inherits LayoutComponentBase
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components
-
+@inject NavigationManager Navigator
 <div class="nav-menu">
     <div class="nav-header">
         <h4>Pennywise</h4>
     </div>
 
-    <ul class="nav-links" style="color: white; ">
+    <ul class="nav-links" style="color: white">
         <!-- Dashboard Link -->
         <li>
-            <NavLink class="nav-link" href="/dashboard" Match="NavLinkMatch.All">
-                <i class="bi bi-house-door"></i> Dashboard
-            </NavLink>
+            <button @onclick="HandleDashboardNavigation">
+                <i class="bi bi-house-door"></i>Dashboard
+            </button>
         </li>
 
         <!-- transactions Link -->
         <li>
-            <NavLink class="nav-link" href="/transactions">
-                <i class="bi bi-cash-coin"></i> Transactions
-            </NavLink>
+            <button @onclick="HandleTransactionNavigation">
+                <i class="bi bi-cash-coin"></i>Transactions
+            </button>
         </li>
 
         <!-- debts Link -->
         <li>
-            <NavLink class="nav-link" href="/debts">
-                <i class="bi bi-wallet2"></i> Debts
-            </NavLink>
+            <button @onclick="HandleDebtsNavigation">
+                <i class="bi bi-wallet2"></i>Debts
+            </button>
         </li>
 
         <!-- reports Link -->
         <li>
-            <NavLink class="nav-link" href="/reports">
-                <i class="bi bi-card-checklist"></i> Reports
-            </NavLink>
+            <button @onclick="HandleReportsNavigation">
+                <i class="bi bi-card-checklist"></i>Reports
+            </button>
         </li>
-        
+
         <!-- Settings Link -->
         <li>
-            <NavLink class="nav-link" href="/settings">
-                <i class="bi bi-gear"></i> Settings
-            </NavLink>
+            <button @onclick="HandleSetting">
+                <i class="bi bi-gear"></i>Settings
+            </button>
         </li>
 
         <!-- Logout Link -->
         <li>
-            <NavLink class="nav-link" href="/logout">
-                <i class="bi bi-box-arrow-right"></i> Logout
-            </NavLink>
+            <button @onclick="HandleLogout">
+                <i class="bi bi-box-arrow-right"></i>Logout
+            </button>
         </li>
     </ul>
 </div>
 
 @Body
+
+@code {
+    private void HandleDashboardNavigation()
+    {
+        Navigator.NavigateTo("/dashboard");
+    }
+    private void HandleTransactionNavigation()
+    {
+        Navigator.NavigateTo("/transactions");
+    }
+    private void HandleDebtsNavigation()
+    {
+        Navigator.NavigateTo("/debts");
+    }
+    private void HandleReportsNavigation()
+    {
+        Navigator.NavigateTo("/reports");
+    }
+    private void HandleSetting()
+    {
+        Navigator.NavigateTo("/settings");
+    }
+    private void HandleLogout()
+    {
+    }
+}

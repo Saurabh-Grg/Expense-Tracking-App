@@ -3,51 +3,6 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
-      "Route": "Pennywise.bnprcctvjv.styles.css",
-      "AssetFile": "Pennywise.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "14519"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aXlbNZPcqp/iWk2YSVmRFopwEW4emVHl6Cltbq8uI04=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 21:21:47 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "bnprcctvjv"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-aXlbNZPcqp/iWk2YSVmRFopwEW4emVHl6Cltbq8uI04="
-        },
-        {
-          "Name": "label",
-          "Value": "Pennywise.styles.css"
-        }
-      ]
-    },
-    {
       "Route": "Pennywise.styles.css",
       "AssetFile": "Pennywise.styles.css",
       "Selectors": [],
@@ -62,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14519"
+          "Value": "14908"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +25,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aXlbNZPcqp/iWk2YSVmRFopwEW4emVHl6Cltbq8uI04=\""
+          "Value": "\"Cc5CULJQIpIF2RNb9KrTSr86LwIBlDzUqz8f0Yl+eUc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 21:21:47 GMT"
+          "Value": "Sat, 04 Jan 2025 07:18:23 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aXlbNZPcqp/iWk2YSVmRFopwEW4emVHl6Cltbq8uI04="
+          "Value": "sha256-Cc5CULJQIpIF2RNb9KrTSr86LwIBlDzUqz8f0Yl+eUc="
+        }
+      ]
+    },
+    {
+      "Route": "Pennywise.xq8r94zke1.styles.css",
+      "AssetFile": "Pennywise.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14908"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Cc5CULJQIpIF2RNb9KrTSr86LwIBlDzUqz8f0Yl+eUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 04 Jan 2025 07:18:23 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xq8r94zke1"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Cc5CULJQIpIF2RNb9KrTSr86LwIBlDzUqz8f0Yl+eUc="
+        },
+        {
+          "Name": "label",
+          "Value": "Pennywise.styles.css"
         }
       ]
     },

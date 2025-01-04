@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-03T16:37:59.857</Modified>
+      <Modified>2025-01-04T07:18:25.309</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-01-03T21:21:48.867</Modified>
+      <Modified>2025-01-04T07:18:25.173</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\Pennywise.runtimeconfig.json">
       <PackagePath>Pennywise.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\bin\Debug\net8.0-windows10.0.19041.0\win10-arm64\Pennywise.dll">
       <PackagePath>Pennywise.dll</PackagePath>
-      <Modified>2025-01-04T05:54:42.202</Modified>
+      <Modified>2025-01-04T07:12:08.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\apphost.exe">
       <PackagePath>Pennywise.exe</PackagePath>
-      <Modified>2025-01-04T05:54:42.440</Modified>
+      <Modified>2025-01-04T07:12:08.755</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -668,7 +668,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\staticwebassets.build.endpoints.json">
       <PackagePath>Pennywise.staticwebassets.endpoints.json</PackagePath>
-      <Modified>2025-01-03T21:21:47.240</Modified>
+      <Modified>2025-01-04T07:18:23.953</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\.nuget\packages\microsoft.maui.controls.compatibility\8.0.83\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -684,11 +684,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\bundle\Pennywise.styles.css">
       <PackagePath>wwwroot\Pennywise.styles.css</PackagePath>
-      <Modified>2025-01-03T21:21:47.222</Modified>
+      <Modified>2025-01-04T07:18:23.938</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\obj\Debug\net8.0-windows10.0.19041.0\win10-arm64\scopedcss\projectbundle\Pennywise.bundle.scp.css">
-      <PackagePath>wwwroot\Pennywise.bnprcctvjv.bundle.scp.css</PackagePath>
-      <Modified>2025-01-03T21:21:47.226</Modified>
+      <PackagePath>wwwroot\Pennywise.xq8r94zke1.bundle.scp.css</PackagePath>
+      <Modified>2025-01-04T07:18:23.941</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
@@ -696,7 +696,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
-      <Modified>2025-01-02T00:06:08.317</Modified>
+      <Modified>2025-01-04T07:14:13.310</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Pages\AddTransaction.razor.css">
       <PackagePath>Components\Pages\AddTransaction.razor.css</PackagePath>
@@ -716,11 +716,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Pages\Login.razor.css">
       <PackagePath>Components\Pages\Login.razor.css</PackagePath>
-      <Modified>2025-01-01T15:42:19.810</Modified>
+      <Modified>2025-01-04T07:18:21.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Pages\Settings.razor.css">
       <PackagePath>Components\Pages\Settings.razor.css</PackagePath>
-      <Modified>2025-01-03T14:29:38.398</Modified>
+      <Modified>2025-01-04T06:37:18.878</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DestinySG\source\repos\Pennywise\Pennywise\Components\Pages\Transactions.razor.css">
       <PackagePath>Components\Pages\Transactions.razor.css</PackagePath>

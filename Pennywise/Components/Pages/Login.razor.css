@@ -65,10 +65,12 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    font-weight: bold;
 }
 
     button:hover {
         background-color: #45a049;
+        color: white;
     }
 
 .form-note {

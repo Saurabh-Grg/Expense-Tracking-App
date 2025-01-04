@@ -6,39 +6,61 @@
 .container[b-xijolfghkp] {
     width: 100%;
 }
+/** {
+    margin: 0;
+}*/
 
-.section[b-xijolfghkp] {
-    margin-bottom: 30px;
+.heading[b-xijolfghkp] {
+    font-size: 27px;
+    font-weight: bold;
+    padding-top: 25px;
+    border-top: 1px solid rgb(195, 194, 194);
 }
 
-    .section h2[b-xijolfghkp] {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .section p[b-xijolfghkp] {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-.btn[b-xijolfghkp] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.sub-heading[b-xijolfghkp] {
+    margin-top: 5px;
+    padding-bottom: 25px;
 }
 
-    .btn:hover[b-xijolfghkp] {
-        background-color: #45a049;
-    }
+.username[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.password[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+label[b-xijolfghkp] {
+    font-weight: bold;
+}
+
+input[b-xijolfghkp] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.Currency[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.notification[b-xijolfghkp] {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 20px;
+}
 
 .toggle-switch[b-xijolfghkp] {
     position: relative;
-    display: inline-block;
+    display: flex;
     width: 50px;
     height: 24px;
 }
@@ -48,6 +70,15 @@
         width: 0;
         height: 0;
     }
+
+button[b-xijolfghkp] {
+    padding: 10px 20px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 1%;
+}
 
 .slider[b-xijolfghkp] {
     position: absolute;
@@ -74,17 +105,27 @@
     }
 
 input:checked + .slider[b-xijolfghkp] {
-    background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
     input:checked + .slider[b-xijolfghkp]:before {
         transform: translateX(26px);
     }
 
-select[b-xijolfghkp], input[type="radio"][b-xijolfghkp] {
+select[b-xijolfghkp],
+input[type="radio"][b-xijolfghkp] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-    width: 200px;
+    width: 100%;
+}
+
+.currency-label[b-xijolfghkp] {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.currency-option[b-xijolfghkp] {
+    margin-bottom: 20px;
 }
