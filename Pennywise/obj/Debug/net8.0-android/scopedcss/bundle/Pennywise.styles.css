@@ -78,7 +78,7 @@ main[b-mbr9omc6wq] {
 }
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
 .nav-menu[b-16uq8voqdr] {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     height: 100%;
     width: 250px;
@@ -97,55 +97,63 @@ main[b-mbr9omc6wq] {
         color: #fff;
         font-size: 34px;
         margin: 0;
-        font-weight: bold; 
+        font-weight: bold;
     }
 
-.nav-links[b-16uq8voqdr] {
+li[b-16uq8voqdr] {
     list-style: none;
-    padding: 0;
+}
+
+button[b-16uq8voqdr] {
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
     color: white;
+    text-align: left;
+    font-size: 15px;
     font-weight: bold;
 }
 
-    .nav-links li[b-16uq8voqdr] {
-        margin: 15px 0;
+    button:hover[b-16uq8voqdr] {
+        background-color: green;
+        border-radius: 5px;
     }
 
-.nav-link[b-16uq8voqdr] {
-    display: flex;
-    align-items: center;
+    button:active[b-16uq8voqdr] {
+        background-color: green;
+        border-radius: 5px;
+    }
+
+i[b-16uq8voqdr] {
+    margin-right: 10px;
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
+}
+/* /Components/Pages/AddDebt.razor.rz.scp.css */
+body[b-kl73uw7i6z] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
 }
 
-    .nav-link:hover[b-16uq8voqdr] {
-        background-color: #34495e;
-        border-radius: 4px;
-    }
+h3[b-kl73uw7i6z] {
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
 
-    .nav-link i[b-16uq8voqdr] {
-        margin-right: 10px;
-    }
+.form-group[b-kl73uw7i6z] {
+    margin: 10px 20px 10px 10px;
+    font-weight: bold;
+}
 
-    .nav-link.active[b-16uq8voqdr] {
+.btn-success[b-kl73uw7i6z] {
+    background-color: #4CAF50;
+}
+
+    .btn-success:hover[b-kl73uw7i6z] {
         background-color: darkgreen;
-        border-radius: 4px;
-        color: white;
     }
-
-
-/*    .transaction-navlink {
-        margin: 10px;
-        background-color: red;
-        width: 230px;
-        color: white;
-    }
-
-    .transaction-navlink:active {
-        background-color: darkgreen;
-    }*/
 /* /Components/Pages/AddTransaction.razor.rz.scp.css */
 body[b-2ahqa2ul6a] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -339,9 +347,120 @@ p[b-lnu0508m8a] {
 }
 /* /Components/Pages/Debts.razor.rz.scp.css */
 body[b-s80mwxzd69] {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
     margin-left: 250px;
 }
+
+.heading[b-s80mwxzd69] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.add-debt-btn[b-s80mwxzd69] {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    /* Hover effect */
+    .add-debt-btn:hover[b-s80mwxzd69] {
+        background-color: darkgreen;
+        transform: translateY(-2px);
+    }
+
+    /* Focus effect */
+    .add-debt-btn:focus[b-s80mwxzd69] {
+        outline: none; /* Remove focus outline */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus ring */
+    }
+
+.summary[b-s80mwxzd69] {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .summary .card[b-s80mwxzd69] {
+        background-color: #f1f3f5;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 30px;
+        width: 30%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .summary .card h2[b-s80mwxzd69] {
+            margin: 0;
+            color: #495057;
+            font-size: 2rem;
+        }
+
+        .summary .card p[b-s80mwxzd69] {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            color: #868e96;
+        }
+
+.summary-description[b-s80mwxzd69] {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.summary-description[b-s80mwxzd69] {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table[b-s80mwxzd69] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th[b-s80mwxzd69],
+td[b-s80mwxzd69] {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th[b-s80mwxzd69] {
+    background-color: #4caf50;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.action-btn[b-s80mwxzd69] {
+    background-color: #a72828;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .action-btn:hover[b-s80mwxzd69] {
+        background-color: #218838;
+    }
 /* /Components/Pages/Home.razor.rz.scp.css */
 body[b-dwdvns6771] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -453,10 +572,12 @@ button[b-htgz6radr3] {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    font-weight: bold;
 }
 
     button:hover[b-htgz6radr3] {
         background-color: #45a049;
+        color: white;
     }
 
 .form-note[b-htgz6radr3] {
@@ -494,7 +615,136 @@ button[b-htgz6radr3] {
         opacity: 1;
     }
 /* /Components/Pages/Settings.razor.rz.scp.css */
-body[b-xijolfghkp] {
+.main-container[b-xijolfghkp] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
+}
+
+.container[b-xijolfghkp] {
+    width: 100%;
+}
+/** {
+    margin: 0;
+}*/
+
+.heading[b-xijolfghkp] {
+    font-size: 27px;
+    font-weight: bold;
+    padding-top: 25px;
+    border-top: 1px solid rgb(195, 194, 194);
+}
+
+.sub-heading[b-xijolfghkp] {
+    margin-top: 5px;
+    padding-bottom: 25px;
+}
+
+.username[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.password[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+label[b-xijolfghkp] {
+    font-weight: bold;
+}
+
+input[b-xijolfghkp] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.Currency[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.notification[b-xijolfghkp] {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 20px;
+}
+
+.toggle-switch[b-xijolfghkp] {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 24px;
+}
+
+    .toggle-switch input[b-xijolfghkp] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+button[b-xijolfghkp] {
+    padding: 10px 20px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 1%;
+}
+
+.slider[b-xijolfghkp] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+    .slider[b-xijolfghkp]:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+    }
+
+input:checked + .slider[b-xijolfghkp] {
+    background-color: #4caf50;
+}
+
+    input:checked + .slider[b-xijolfghkp]:before {
+        transform: translateX(26px);
+    }
+
+select[b-xijolfghkp],
+input[type="radio"][b-xijolfghkp] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.currency-label[b-xijolfghkp] {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.currency-option[b-xijolfghkp] {
+    margin-bottom: 20px;
 }
 /* /Components/Pages/Transactions.razor.rz.scp.css */
 body[b-o38ec3uz9i] {
@@ -502,14 +752,26 @@ body[b-o38ec3uz9i] {
     margin-left: 250px;
 }
 
+.heading[b-o38ec3uz9i] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+i[b-o38ec3uz9i] {
+    color: white;
+}
+
+
+
 h3[b-o38ec3uz9i] {
     font-weight: bolder;
-    margin-bottom: 25px;
 }
 
 .transaction-filters[b-o38ec3uz9i] {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    flex-wrap: nowrap;
     gap: 10px; /* Space between items */
     align-items: center; /* Align items vertically */
     margin-bottom: 20px;
@@ -537,15 +799,13 @@ h3[b-o38ec3uz9i] {
     }
 
 .add-transaction-btn[b-o38ec3uz9i] {
-    position: fixed; /* Fix the button's position */
-    bottom: 20px; /* Distance from the bottom of the screen */
-    right: 20px; /* Distance from the right side of the screen */
-    background-color: #4CAF50; /* Primary blue */
-    border: none; /* Remove border */
-    color: white; /* White text */
-    padding: 15px 25px; /* Add some padding */
-    font-size: 16px; /* Make the text larger */
-    border-radius: 10px; /* Make it more circular */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
@@ -553,8 +813,8 @@ h3[b-o38ec3uz9i] {
 
     /* Hover effect */
     .add-transaction-btn:hover[b-o38ec3uz9i] {
-        background-color: darkgreen; /* Darker blue on hover */
-        transform: translateY(-2px); /* Slight lift effect */
+        background-color: darkgreen;
+        transform: translateY(-2px);
     }
 
     /* Focus effect */

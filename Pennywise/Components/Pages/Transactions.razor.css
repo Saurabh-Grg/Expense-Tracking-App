@@ -3,14 +3,26 @@ body {
     margin-left: 250px;
 }
 
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+i {
+    color: white;
+}
+
+
+
 h3 {
     font-weight: bolder;
-    margin-bottom: 25px;
 }
 
 .transaction-filters {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    flex-wrap: nowrap;
     gap: 10px; /* Space between items */
     align-items: center; /* Align items vertically */
     margin-bottom: 20px;
@@ -38,15 +50,13 @@ h3 {
     }
 
 .add-transaction-btn {
-    position: fixed; /* Fix the button's position */
-    bottom: 20px; /* Distance from the bottom of the screen */
-    right: 20px; /* Distance from the right side of the screen */
-    background-color: #4CAF50; /* Primary blue */
-    border: none; /* Remove border */
-    color: white; /* White text */
-    padding: 15px 25px; /* Add some padding */
-    font-size: 16px; /* Make the text larger */
-    border-radius: 10px; /* Make it more circular */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
@@ -54,8 +64,8 @@ h3 {
 
     /* Hover effect */
     .add-transaction-btn:hover {
-        background-color: darkgreen; /* Darker blue on hover */
-        transform: translateY(-2px); /* Slight lift effect */
+        background-color: darkgreen;
+        transform: translateY(-2px);
     }
 
     /* Focus effect */

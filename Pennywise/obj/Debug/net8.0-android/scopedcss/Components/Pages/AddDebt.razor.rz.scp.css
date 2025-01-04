@@ -1,0 +1,22 @@
+body[b-kl73uw7i6z] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
+}
+
+h3[b-kl73uw7i6z] {
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+.form-group[b-kl73uw7i6z] {
+    margin: 10px 20px 10px 10px;
+    font-weight: bold;
+}
+
+.btn-success[b-kl73uw7i6z] {
+    background-color: #4CAF50;
+}
+
+    .btn-success:hover[b-kl73uw7i6z] {
+        background-color: darkgreen;
+    }

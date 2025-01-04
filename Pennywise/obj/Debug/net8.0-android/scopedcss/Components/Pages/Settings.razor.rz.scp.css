@@ -1,2 +1,131 @@
-body[b-xijolfghkp] {
+.main-container[b-xijolfghkp] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 250px
+}
+
+.container[b-xijolfghkp] {
+    width: 100%;
+}
+/** {
+    margin: 0;
+}*/
+
+.heading[b-xijolfghkp] {
+    font-size: 27px;
+    font-weight: bold;
+    padding-top: 25px;
+    border-top: 1px solid rgb(195, 194, 194);
+}
+
+.sub-heading[b-xijolfghkp] {
+    margin-top: 5px;
+    padding-bottom: 25px;
+}
+
+.username[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.password[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+label[b-xijolfghkp] {
+    font-weight: bold;
+}
+
+input[b-xijolfghkp] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.Currency[b-xijolfghkp] {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.notification[b-xijolfghkp] {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 20px;
+}
+
+.toggle-switch[b-xijolfghkp] {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 24px;
+}
+
+    .toggle-switch input[b-xijolfghkp] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+button[b-xijolfghkp] {
+    padding: 10px 20px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 1%;
+}
+
+.slider[b-xijolfghkp] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+    .slider[b-xijolfghkp]:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+    }
+
+input:checked + .slider[b-xijolfghkp] {
+    background-color: #4caf50;
+}
+
+    input:checked + .slider[b-xijolfghkp]:before {
+        transform: translateX(26px);
+    }
+
+select[b-xijolfghkp],
+input[type="radio"][b-xijolfghkp] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.currency-label[b-xijolfghkp] {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.currency-option[b-xijolfghkp] {
+    margin-bottom: 20px;
 }

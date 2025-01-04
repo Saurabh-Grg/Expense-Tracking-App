@@ -1,45 +1,147 @@
 ﻿@page "/debts"
 @using Pennywise.Components.Layout
 @layout LayoutWithNavmenu
+@using System.Text.Json
+@using Pennywise.Components.Models
+@using Pennywise.Components.Helpers
 @inject NavigationManager Navigator
+@using System.Diagnostics
 
-<div>
-    <h3>Manage Debts</h3>
+<body>
+    <div class="heading">
+        <h1>Debt Management</h1>
+        <button class="add-debt-btn" @onclick="NavigateToAddDebtForm"><i class="bi bi-plus"></i>Add Debt</button>
+    </div>
 
-    @* <ul> *@
-    @*     @foreach (var debt in Debts) *@
-    @*     { *@
-    @*         <li> *@
-    @*             <strong>@debt.Title</strong> - Amount: @debt.Amount - Due: @debt.DueDate?.ToString("yyyy-MM-dd") *@
-    @*             @if (!debt.IsCleared) *@
-    @*             { *@
-    @*                 <button @onclick="() => ClearDebt(debt.Id)">Clear Debt</button> *@
-    @*             } *@
-    @*             else *@
-    @*             { *@
-    @*                 <span style="color: green;">(Cleared)</span> *@
-    @*             } *@
-    @*         </li> *@
-    @*     } *@
-    @* </ul> *@
-</div>
+    <!-- Summary Section -->
+    <div class="summary">
+        <div class="card">
+            <h2>@totalDebts.ToString("C")</h2>
+            <p>Total Debts</p>
+        </div>
+        <div class="card">
+            <h2>@clearedDebts.ToString("C")</h2>
+            <p>Cleared Debts</p>
+        </div>
+        <div class="card">
+            <h2>@pendingDebts.ToString("C")</h2>
+            <p>Pending Debts</p>
+        </div>
+    </div>
+
+    <!-- Debt Table Section -->
+    <h2>Your Debts</h2>
+    <p class="summary-description">Here is the list of all your debts. You can track, manage, and clear them as needed.</p>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (debts.Count > 0)
+                {
+                    @foreach (var debt in debts)
+                    {
+                        <tr>
+                            <td>@debt.Source</td>
+                            <td>@debt.Amount.ToString("C")</td>
+                            <td>@debt.DueDate.ToShortDateString()</td>
+                            <td>
+                                @if (debt.Status == "Pending")
+                                {
+                                    <span style="color: #dc3545;">Pending</span>
+                                }
+                                else
+                                {
+                                    <span style="color: #28a745;">Cleared</span>
+                                }
+                            </td>
+                            <td>
+                                @if (debt.Status == "Pending")
+                                {
+                                    <button class="action-btn" @onclick="() => ClearDebt(debt)">Clear</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="no-data">
+                        <td colspan="5">No debts available. Please add new debts to keep track of them.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
 
 @code {
-    // private List<Transaction> Debts = new List<Transaction>();
+    private List<Debt> debts = new List<Debt>();
 
-    // protected override async Task OnInitializedAsync()
-    // {
-    //     var allTransactions = await UserStorage.GetTransactionsAsync();
-    //     Debts = allTransactions.Where(t => t.IsDebt).ToList();
-    // }
+    private decimal totalDebts => debts.Where(d => d.Status != "Cleared").Sum(d => d.Amount);
+    private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
+    private decimal pendingDebts => totalDebts - clearedDebts;
 
-    // private async Task ClearDebt(string id)
-    // {
-    //     var debt = Debts.FirstOrDefault(d => d.Id == id);
-    //     if (debt != null)
-    //     {
-    //         debt.IsCleared = true;
-    //         await UserStorage.SaveTransactionsAsync(Debts);
-    //     }
-    // }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            var filePath = Path.Combine(baseDirectory, "debts.json");
+
+            if (File.Exists(filePath))
+            {
+                var json = await File.ReadAllTextAsync(filePath);
+                debts = string.IsNullOrWhiteSpace(json)
+                    ? new List<Debt>()
+                    : JsonConvert.DeserializeObject<List<Debt>>(json) ?? new List<Debt>();
+            }
+            else
+            {
+                Debug.WriteLine("Debt file does not exist.");
+                debts = new List<Debt>();
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading debts: {ex.Message}");
+        }
+    }
+
+    private void NavigateToAddDebtForm()
+    {
+        Navigator.NavigateTo("/add-debt");
+    }
+
+    private void ClearDebt(Debt debt)
+    {
+        debt.Status = "Cleared";  // Update the debt status to "Cleared"
+        SaveDebtsToFile();
+        StateHasChanged();  // Trigger re-rendering to update the table
+    }
+
+    private async void SaveDebtsToFile()
+    {
+        try
+        {
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            var filePath = Path.Combine(baseDirectory, "debts.json");
+
+            var updatedJson = JsonConvert.SerializeObject(debts, Formatting.Indented);
+            await File.WriteAllTextAsync(filePath, updatedJson);
+
+            Debug.WriteLine($"Debt file successfully updated at {filePath}. Content: {updatedJson}");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error saving debts: {ex.Message}");
+        }
+    }
 }

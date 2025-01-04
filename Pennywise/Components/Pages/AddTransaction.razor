@@ -1,11 +1,12 @@
 ﻿@page "/add-transaction"
 @using Pennywise.Components.Layout
-@using System.Text.Json
+@using Newtonsoft.Json
 @layout LayoutWithNavmenu
 @using Pennywise.Components.Models
 @using Pennywise.Components.Helpers
 @inject NavigationManager Navigator
 @using System.Diagnostics
+@using System.IO
 
 <body>
     <h3>Add New Transaction</h3>
@@ -40,16 +41,12 @@
         @if (newTransaction.Type == "Debt")
         {
             <div class="form-group">
-                <div>
-                    <label>Debt Source</label>
-                </div>
-                <input style="width: 100%" type="text" @bind="newTransaction.DebtSource" />
+                <label for="debtSource">Debt Source</label>
+                <InputText id="debtSource" class="form-control" @bind-Value="newTransaction.DebtSource" required />
             </div>
             <div class="form-group">
-                <div>
-                    <label>Due Date</label>
-                </div>
-                <input style="width: 100%" type="date" @bind="newTransaction.DueDate" />
+                <label for="dueDate">Due Date</label>
+                <InputDate id="dueDate" class="form-control" @bind-Value="newTransaction.DueDate" />
             </div>
         }
 
@@ -98,76 +95,47 @@
                 return;
             }
 
-            // Set the UserId for the transaction
-            newTransaction.UserId = user.UserId.ToString(); // Ensure UserId is a string
-
-            // Generate a unique ID for the transaction
+            newTransaction.UserId = user.UserId.ToString();
             newTransaction.Id = Guid.NewGuid().ToString();
 
-            // Define the path for the transaction data
-            var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData");
+            if (!Directory.Exists(baseDirectory))
+            {
+                Directory.CreateDirectory(baseDirectory);
+                Debug.WriteLine($"Created directory: {baseDirectory}");
+            }
+
+            var filePath = Path.Combine(baseDirectory, "transactions.json");
             Debug.WriteLine($"Transaction file path: {filePath}");
 
-            var transactions = new List<Transaction>();
+            List<Transaction> transactions;
 
-            // Check if the file already exists and load its content
             if (File.Exists(filePath))
             {
                 Debug.WriteLine("File exists. Reading content...");
                 var json = await File.ReadAllTextAsync(filePath);
-
-                // Check if file is not empty
-                if (!string.IsNullOrWhiteSpace(json))
-                {
-                    Debug.WriteLine($"File content before deserialization: {json}");
-                    try
-                    {
-                        transactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
-                        Debug.WriteLine("Deserialization successful.");
-                    }
-                    catch (JsonException jsonEx)
-                    {
-                        Debug.WriteLine($"JSON deserialization error: {jsonEx.Message}");
-                        Debug.WriteLine($"Stack Trace: {jsonEx.StackTrace}");
-                        transactions = new List<Transaction>();
-                    }
-                }
-                else
-                {
-                    Debug.WriteLine("File is empty. Initializing transactions as an empty list.");
-                }
+                transactions = string.IsNullOrWhiteSpace(json)
+                    ? new List<Transaction>()
+                    : JsonConvert.DeserializeObject<List<Transaction>>(json) ?? new List<Transaction>();
+                Debug.WriteLine($"Loaded transactions: {JsonConvert.SerializeObject(transactions)}");
             }
             else
             {
-                Debug.WriteLine("File does not exist. Creating a new one.");
+                Debug.WriteLine("File does not exist. Initializing new transaction list.");
+                transactions = new List<Transaction>();
             }
 
-            // Add the new transaction to the list
-            Debug.WriteLine($"Transaction being added: {JsonSerializer.Serialize(newTransaction)}");
             transactions.Add(newTransaction);
+            var updatedJson = JsonConvert.SerializeObject(transactions, Formatting.Indented);
 
-            // Serialize the transactions list back to JSON
-            var updatedJson = JsonSerializer.Serialize(transactions, new JsonSerializerOptions { WriteIndented = true });
-            Debug.WriteLine($"Updated JSON to be written: {updatedJson}");
+            await File.WriteAllTextAsync(filePath, updatedJson);
+            Debug.WriteLine($"File successfully updated at {filePath}. Content: {updatedJson}");
 
-            // Save the updated list to the file
-            try
-            {
-                await File.WriteAllTextAsync(filePath, updatedJson);
-                Debug.WriteLine("File successfully updated.");
-            }
-            catch (Exception writeEx)
-            {
-                Debug.WriteLine($"Error writing to file: {writeEx.Message}");
-                Debug.WriteLine($"Stack Trace: {writeEx.StackTrace}");
-            }
-
-            // Redirect the user to the transactions page
             Navigator.NavigateTo("/transactions");
         }
         catch (Exception ex)
         {
-            Debug.WriteLine($"An error occurred: {ex.Message}");
+            Debug.WriteLine($"Error: {ex.Message}");
             Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
         }
     }

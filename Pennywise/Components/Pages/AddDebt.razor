@@ -1,0 +1,125 @@
+﻿@page "/add-debt"
+@using Pennywise.Components.Layout
+@using Newtonsoft.Json
+@layout LayoutWithNavmenu
+@using Pennywise.Components.Models
+@using Pennywise.Components.Helpers
+@inject NavigationManager Navigator
+@using System.Diagnostics
+@using System.IO
+
+<body>
+    <div class="container">
+        <h3>Add New Debts</h3>
+
+        <EditForm Model="@newDebt" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <!-- Title -->
+            <div class="form-group">
+                <label for="title">Title</label>
+                <InputText id="title" class="form-control" @bind-Value="newDebt.Title" required />
+            </div>
+
+            <!-- Amount -->
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <InputNumber id="amount" class="form-control" @bind-Value="newDebt.Amount" required />
+            </div>
+
+            <div class="form-group">
+                <label for="source">Debt Source</label>
+                <InputText id="debtSource" class="form-control" @bind-Value="newDebt.Source" required />
+            </div>
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <InputDate id="dueDate" class="form-control" @bind-Value="newDebt.DueDate" />
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label for="date">Date</label>
+                <InputDate id="date" class="form-control" @bind-Value="newDebt.Date" required />
+            </div>
+
+
+
+            <!-- Notes -->
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <InputText id="notes" class="form-control" @bind-Value="newDebt.Notes" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+            </div>
+        </EditForm>
+    </div>
+</body>
+
+@code {
+    private Debt newDebt = new Debt { Date = DateTime.Now };
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            var user = UserStorage.LoadUser();
+            if (user == null)
+            {
+                Debug.WriteLine("No user found. Operation aborted.");
+                return;
+            }
+
+            newDebt.UserId = user.UserId.ToString();
+            newDebt.Id = Guid.NewGuid().ToString();
+
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            if (!Directory.Exists(baseDirectory))
+            {
+                Directory.CreateDirectory(baseDirectory);
+                Debug.WriteLine($"Created directory: {baseDirectory}");
+            }
+
+            var filePath = Path.Combine(baseDirectory, "debts.json");
+            Debug.WriteLine($"Transaction file path: {filePath}");
+
+            List<Debt> debts;
+
+            if (File.Exists(filePath))
+            {
+                Debug.WriteLine("File exists. Reading content...");
+                var json = await File.ReadAllTextAsync(filePath);
+                debts = string.IsNullOrWhiteSpace(json)
+                    ? new List<Debt>()
+                    : JsonConvert.DeserializeObject<List<Debt>>(json) ?? new List<Debt>();
+                Debug.WriteLine($"Loaded debts: {JsonConvert.SerializeObject(debts)}");
+            }
+            else
+            {
+                Debug.WriteLine("File does not exist. Initializing new debts list.");
+                debts = new List<Debt>();
+            }
+
+            debts.Add(newDebt);
+            var updatedJson = JsonConvert.SerializeObject(debts, Formatting.Indented);
+
+            await File.WriteAllTextAsync(filePath, updatedJson);
+            Debug.WriteLine($"File successfully updated at {filePath}. Content: {updatedJson}");
+
+            Navigator.NavigateTo("/debts");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error: {ex.Message}");
+            Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
+        }
+    }
+
+    private void Cancel()
+    {
+        Navigator.NavigateTo("/debts");
+    }
+}

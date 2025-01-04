@@ -1,5 +1,5 @@
 .nav-menu[b-16uq8voqdr] {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     height: 100%;
     width: 250px;
@@ -18,52 +18,37 @@
         color: #fff;
         font-size: 34px;
         margin: 0;
-        font-weight: bold; 
+        font-weight: bold;
     }
 
-.nav-links[b-16uq8voqdr] {
+li[b-16uq8voqdr] {
     list-style: none;
-    padding: 0;
+}
+
+button[b-16uq8voqdr] {
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
     color: white;
+    text-align: left;
+    font-size: 15px;
     font-weight: bold;
 }
 
-    .nav-links li[b-16uq8voqdr] {
-        margin: 15px 0;
+    button:hover[b-16uq8voqdr] {
+        background-color: green;
+        border-radius: 5px;
     }
 
-.nav-link[b-16uq8voqdr] {
-    display: flex;
-    align-items: center;
+    button:active[b-16uq8voqdr] {
+        background-color: green;
+        border-radius: 5px;
+    }
+
+i[b-16uq8voqdr] {
+    margin-right: 10px;
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
 }
-
-    .nav-link:hover[b-16uq8voqdr] {
-        background-color: #34495e;
-        border-radius: 4px;
-    }
-
-    .nav-link i[b-16uq8voqdr] {
-        margin-right: 10px;
-    }
-
-    .nav-link.active[b-16uq8voqdr] {
-        background-color: darkgreen;
-        border-radius: 4px;
-        color: white;
-    }
-
-
-/*    .transaction-navlink {
-        margin: 10px;
-        background-color: red;
-        width: 230px;
-        color: white;
-    }
-
-    .transaction-navlink:active {
-        background-color: darkgreen;
-    }*/

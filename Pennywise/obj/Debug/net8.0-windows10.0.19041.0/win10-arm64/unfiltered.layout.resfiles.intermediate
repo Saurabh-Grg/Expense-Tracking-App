@@ -1,7 +1,7 @@
-Components\Data\transactions.json
 Components\Data\user.json
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\AddDebt.razor.css
 Components\Pages\AddTransaction.razor.css
 Components\Pages\Dashboard.razor.css
 Components\Pages\Debts.razor.css
@@ -67,7 +67,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\Pennywise.styles.css
-wwwroot\Pennywise.xq8r94zke1.bundle.scp.css
+wwwroot\Pennywise.p06eo4p439.bundle.scp.css
 AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css

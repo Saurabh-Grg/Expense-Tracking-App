@@ -9,7 +9,13 @@
 
 
 <body>
-    <h3>Transactions</h3>
+    <div class="heading">
+        <h3>Transactions</h3>
+        <!-- Add Transaction Button -->
+        <button class="btn btn-primary add-transaction-btn" @onclick="NavigateToAddTransactionPage">
+            <i class="bi bi-plus"></i>Add Transaction
+        </button>
+    </div>
 
 <!-- Transaction Filtering -->
 <div class="transaction-filters">
@@ -63,11 +69,6 @@
             }
     </tbody>
 </table>
-
-<!-- Add Transaction Button -->
-<button class="btn btn-primary add-transaction-btn" @onclick="NavigateToAddTransactionPage">
-    Add Transaction
-</button>
 </body>
 
 @code {
@@ -79,7 +80,12 @@
     private DateTime? filterEndDate;
 
     private int totalTransactions => transactions.Count;
-    private decimal totalBalance => transactions.Sum(t => t.Amount);
+    // Calculate total income and total expenses separately
+    private decimal totalIncome => transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+    private decimal totalExpenses => transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
+
+    // Calculate balance as total income minus total expenses
+    private decimal totalBalance => totalIncome - totalExpenses;
 
     private IEnumerable<Transaction> FilteredTransactions =>
         transactions
@@ -99,7 +105,16 @@
             return;
         }
 
-        var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+        var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData");
+        if (!Directory.Exists(baseDirectory))
+        {
+            Directory.CreateDirectory(baseDirectory);
+            Debug.WriteLine($"Created directory: {baseDirectory}");
+        }
+
+        var filePath = Path.Combine(baseDirectory, "transactions.json");
+        Debug.WriteLine($"Transaction file path: {filePath}");
+
 
         if (File.Exists(filePath))
         {
