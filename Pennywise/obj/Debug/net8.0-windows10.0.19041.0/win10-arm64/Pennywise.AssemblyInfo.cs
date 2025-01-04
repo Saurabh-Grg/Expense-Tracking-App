@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pennywise")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+c48c8eb2ef08ef42f5ec372650b41316c0b62c7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f237c785113f27a2d3216ebed39ab60cfa13569d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pennywise")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pennywise")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

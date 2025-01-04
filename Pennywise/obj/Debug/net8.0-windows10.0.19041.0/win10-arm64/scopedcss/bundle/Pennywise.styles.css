@@ -341,11 +341,27 @@ p[b-lnu0508m8a] {
     border-radius: 20px;
     width: 50%;
     margin: 0.5%;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
+
+.recent-transactions[b-lnu0508m8a] {
+    margin-top: 15px;
+}
+
+.transaction-item[b-lnu0508m8a] {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+    .transaction-item p[b-lnu0508m8a] {
+        margin: 5px 0;
+    }
 /* /Components/Pages/Debts.razor.rz.scp.css */
 body[b-s80mwxzd69] {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

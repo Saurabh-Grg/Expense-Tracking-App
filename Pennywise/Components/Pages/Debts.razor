@@ -6,6 +6,7 @@
 @using Pennywise.Components.Helpers
 @inject NavigationManager Navigator
 @using System.Diagnostics
+@using Newtonsoft.Json
 
 <body>
     <div class="heading">
@@ -16,15 +17,15 @@
     <!-- Summary Section -->
     <div class="summary">
         <div class="card">
-            <h2>@totalDebts.ToString("C")</h2>
+            <h2>Rs @totalDebts</h2>
             <p>Total Debts</p>
         </div>
         <div class="card">
-            <h2>@clearedDebts.ToString("C")</h2>
+            <h2>Rs @clearedDebts</h2>
             <p>Cleared Debts</p>
         </div>
         <div class="card">
-            <h2>@pendingDebts.ToString("C")</h2>
+            <h2>Rs @pendingDebts</h2>
             <p>Pending Debts</p>
         </div>
     </div>
@@ -37,7 +38,7 @@
             <thead>
                 <tr>
                     <th>Source</th>
-                    <th>Amount</th>
+                    <th>Amount(Rs)</th>
                     <th>Due Date</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -50,7 +51,7 @@
                     {
                         <tr>
                             <td>@debt.Source</td>
-                            <td>@debt.Amount.ToString("C")</td>
+                            <td>@debt.Amount</td>
                             <td>@debt.DueDate.ToShortDateString()</td>
                             <td>
                                 @if (debt.Status == "Pending")

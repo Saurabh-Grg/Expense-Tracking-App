@@ -60,7 +60,7 @@
 </body>
 
 @code {
-    private Debt newDebt = new Debt { Date = DateTime.Now };
+    private Debt newDebt = new Debt { Date = DateTime.Now , Status = "Pending"};
 
     private async Task HandleValidSubmit()
     {

@@ -2,6 +2,13 @@
 @using Pennywise.Components.Layout
 @layout LayoutWithNavmenu
 @inject NavigationManager Navigator
+@using System.Text.Json
+@using Pennywise.Components.Models
+@using Newtonsoft.Json
+@using System.IO
+@using System.Linq
+@using System.Threading.Tasks
+@using System.Diagnostics
 
 <div class="main-container">
     <div class="container">
@@ -9,35 +16,35 @@
         <div class="row-1">
             <div class="row1-item1">
                 <p>Total Inflows</p>
-                <p>Rs 0</p>
+                <p>Rs @totalInflows</p>
             </div>
             <div class="row1-item2">
                 <p>Total Outflows</p>
-                <p>Rs 0</p>
+                <p>Rs @totalOutflows</p>
             </div>
         </div>
         <div class="row-2">
             <div class="row2-item1">
                 <p>Total Debts</p>
-                <p>Rs 0</p>
+                <p>Rs @totalDebts</p>
             </div>
             <div class="row2-item2">
                 <p>Cleared Debts</p>
-                <p>Rs 0</p>
+                <p>Rs @clearedDebts</p>
             </div>
             <div class="row2-item3">
                 <p>Remaining Debts</p>
-                <p>Rs 0</p>
+                <p>Rs @remainingDebts</p>
             </div>
         </div>
         <div class="row-3">
             <div class="row3-item1">
                 <p>Highest Transaction</p>
-                <p>Rs 0</p>
+                <p>Rs @highestTransaction</p>
             </div>
             <div class="row3-item2">
                 <p>Lowest Transaction</p>
-                <p>Rs 0</p>
+                <p>Rs @lowestTransaction</p>
             </div>
         </div>
         <div class="row-4">
@@ -46,11 +53,86 @@
             </div>
             <div class="row4-item2">
                 <p>Recent Transactions</p>
+                <div class="recent-transactions">
+                    @if (transactions.Any())
+                    {
+                        @foreach (var transaction in transactions.OrderByDescending(t => t.Date).Take(3))
+                        {
+                            <div class="transaction-item">
+                                <div>
+                                    <p><strong>@transaction.Title</strong> (@transaction.Type)</p>
+                                    <p>@transaction.Date.ToShortDateString()</p>
+                                </div>
+                                <div>
+                                    <p>- Rs @transaction.Amount</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No transactions available.</p>
+                    }
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 @code {
+    private List<Transaction> transactions = new List<Transaction>();
+    private List<Debt> debts = new List<Debt>();
 
+    private decimal totalInflows => transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+    private decimal totalOutflows => transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
+
+    private decimal totalDebts => debts.Sum(d => d.Amount);
+    private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
+    private decimal remainingDebts => totalDebts - clearedDebts;
+
+    private decimal highestTransaction => transactions.Any() ? transactions.Max(t => t.Amount) : 0;
+    private decimal lowestTransaction => transactions.Any() ? transactions.Min(t => t.Amount) : 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Load Transactions
+            var transactionFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
+            if (File.Exists(transactionFilePath))
+            {
+                var transactionJson = await File.ReadAllTextAsync(transactionFilePath);
+                transactions = string.IsNullOrWhiteSpace(transactionJson)
+                    ? new List<Transaction>()
+                    : JsonConvert.DeserializeObject<List<Transaction>>(transactionJson) ?? new List<Transaction>();
+
+                // Debugging - Print Transactions
+                Debug.WriteLine("Transactions:");
+                foreach (var transaction in transactions)
+                {
+                    Debug.WriteLine($"Transaction - Title: {transaction.Title}, Type: {transaction.Type}, Amount: {transaction.Amount}, Date: {transaction.Date}");
+                }
+            }
+
+            // Load Debts
+            var debtFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData", "debts.json");
+            if (File.Exists(debtFilePath))
+            {
+                var debtJson = await File.ReadAllTextAsync(debtFilePath);
+                debts = string.IsNullOrWhiteSpace(debtJson)
+                    ? new List<Debt>()
+                    : JsonConvert.DeserializeObject<List<Debt>>(debtJson) ?? new List<Debt>();
+
+                // Debugging - Print Debts
+                Debug.WriteLine("Debts:");
+                foreach (var debt in debts)
+                {
+                    Debug.WriteLine($"Debt - Source: {debt.Source}, Amount: {debt.Amount}, Status: {debt.Status}, Due Date: {debt.DueDate}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading data: {ex.Message}");
+        }
+    }
 }
