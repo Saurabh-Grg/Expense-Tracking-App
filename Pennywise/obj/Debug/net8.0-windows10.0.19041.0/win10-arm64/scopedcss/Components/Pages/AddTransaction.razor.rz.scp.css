@@ -20,3 +20,12 @@ h3[b-2ahqa2ul6a] {
 .btn-success:hover[b-2ahqa2ul6a] {
     background-color: darkgreen;
 }
+
+.customTagButton[b-2ahqa2ul6a] {
+    padding: 10px 15px;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 5px;
+}

@@ -15,48 +15,85 @@
         <div class="row-0">Dashboard</div>
         <div class="row-1">
             <div class="row1-item1">
-                <p>Total Inflows</p>
-                <p>Rs @totalInflows</p>
+                <p class="header">Total Inflows</p>
+                <p class="body">Rs @totalInflows</p>
             </div>
             <div class="row1-item2">
-                <p>Total Outflows</p>
-                <p>Rs @totalOutflows</p>
+                <p class="header">Total Outflows</p>
+                <p class="body">Rs @totalOutflows</p>
             </div>
         </div>
         <div class="row-2">
             <div class="row2-item1">
-                <p>Total Debts</p>
-                <p>Rs @totalDebts</p>
+                <p class="header">Total Debts</p>
+                <p class="body">Rs @totalDebts</p>
             </div>
             <div class="row2-item2">
-                <p>Cleared Debts</p>
-                <p>Rs @clearedDebts</p>
+                <p class="header">Cleared Debts</p>
+                <p class="body">Rs @clearedDebts</p>
             </div>
             <div class="row2-item3">
-                <p>Remaining Debts</p>
-                <p>Rs @remainingDebts</p>
+                <p class="header">Remaining Debts</p>
+                <p class="body">Rs @remainingDebts</p>
             </div>
         </div>
         <div class="row-3">
             <div class="row3-item1">
-                <p>Highest Transaction</p>
-                <p>Rs @highestTransaction</p>
+                <p class="header">Highest Inflow</p>
+                <p class="body">Rs @highestInflow</p>
             </div>
             <div class="row3-item2">
-                <p>Lowest Transaction</p>
-                <p>Rs @lowestTransaction</p>
+                <p class="header">Lowest Inflow</p>
+                <p class="body">Rs @lowestInflow</p>
+            </div>
+            <div class="row3-item3">
+                <p class="header">Highest Outflow</p>
+                <p class="body">Rs @highestOutflow</p>
+            </div>
+            <div class="row3-item4">
+                <p class="header">Lowest Outflow</p>
+                <p class="body">Rs @lowestOutflow</p>
+            </div>
+            <div class="row3-item5">
+                <p class="header">Highest Debt</p>
+                <p class="body">Rs @highestDebt</p>
+            </div>
+            <div class="row3-item6">
+                <p class="header">Lowest Debt</p>
+                <p class="body">Rs @lowestDebt</p>
             </div>
         </div>
         <div class="row-4">
             <div class="row4-item1">
-                <p>Overview</p>
+                <p class="row4-header">Pending Debts</p>
+                <div class="recent-debts">
+                    @if (debts.Any())
+                    {
+                        @foreach (var debt in debts.Where(d => d.Status == "Pending").OrderByDescending(d => d.Date).Take(3))
+                        {
+                            <div class="debt-item">
+                                <div>
+                                    <p><strong>@debt.Title</strong> (@debt.Source)</p>
+                                    <p>@debt.Date.ToShortDateString()</p>
+                                </div>
+                                <div>
+                                    <p class="dAmount">- Rs @debt.Amount</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No pending debts.</p>
+                    }
+                </div>
             </div>
             <div class="row4-item2">
-                <p>Recent Transactions</p>
+                <p class="row4-header">Recent Transactions</p>
                 <div class="recent-transactions">
                     @if (transactions.Any())
                     {
-                        @foreach (var transaction in transactions.OrderByDescending(t => t.Date).Take(3))
+                        @foreach (var transaction in transactions.OrderByDescending(t => t.Date).Take(4))
                         {
                             <div class="transaction-item">
                                 <div>
@@ -64,7 +101,7 @@
                                     <p>@transaction.Date.ToShortDateString()</p>
                                 </div>
                                 <div>
-                                    <p>- Rs @transaction.Amount</p>
+                                    <p class="dAmount">- Rs @transaction.Amount</p>
                                 </div>
                             </div>
                         }
@@ -89,8 +126,17 @@
     private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
     private decimal remainingDebts => totalDebts - clearedDebts;
 
-    private decimal highestTransaction => transactions.Any() ? transactions.Max(t => t.Amount) : 0;
-    private decimal lowestTransaction => transactions.Any() ? transactions.Min(t => t.Amount) : 0;
+    private decimal highestInflow => transactions.Where(t => t.Type == "Income").Any() ? transactions.Where(t => t.Type == "Income").Max(t => t.Amount) : 0;
+
+    private decimal lowestInflow => transactions.Where(t => t.Type == "Income").Any() ? transactions.Where(t => t.Type == "Income").Min(t => t.Amount) : 0;
+
+    private decimal highestOutflow => transactions.Where(t => t.Type == "Expense").Any() ? transactions.Where(t => t.Type == "Expense").Max(t => t.Amount) : 0;
+
+    private decimal lowestOutflow => transactions.Where(t => t.Type == "Expense").Any() ? transactions.Where(t => t.Type == "Expense").Min(t => t.Amount) : 0;
+
+    private decimal highestDebt => debts.Any() ? debts.Max(d => d.Amount) : 0;
+
+    private decimal lowestDebt => debts.Any() ? debts.Min(d => d.Amount) : 0;
 
     protected override async Task OnInitializedAsync()
     {

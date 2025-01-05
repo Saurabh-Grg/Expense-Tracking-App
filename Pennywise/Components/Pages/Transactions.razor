@@ -10,11 +10,23 @@
 
 <body>
     <div class="heading">
-        <h3>Transactions</h3>
+        <p>Transactions</p>
         <!-- Add Transaction Button -->
         <button class="btn btn-primary add-transaction-btn" @onclick="NavigateToAddTransactionPage">
             <i class="bi bi-plus"></i>Add Transaction
         </button>
+    </div>
+
+    <!-- Total Transactions Summary -->
+    <div class="transaction-summary">
+        <div class="row1-item1">
+            <p class="header">Total Transactions</p>
+            <p class="body">@totalTransactions</p>
+        </div>
+        <div class="row1-item2">
+            <p class="header">Total Balance</p>
+            <p class="body">Rs @totalBalance</p>
+        </div>
     </div>
 
 <!-- Transaction Filtering -->
@@ -25,30 +37,68 @@
         <option value="Income">Income</option>
         <option value="Expense">Expense</option>
     </InputSelect>
-    <InputText @bind-Value="filterTags" placeholder="Search by Tags" class="form-control" />
+        <InputSelect id="type" class="form-control" @bind-Value="filterTags" required>
+            <option value="">All tag</option>
+            <option value="Yearly">Yearly</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Food">Food</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Gadgets">Gadgets</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Fuel">Fuel</option>
+            <option value="Rent">Rent</option>
+            <option value="EMI">EMI</option>
+            <option value="Party">Party</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Health">Health</option>
+            <option value="Travel">Travel</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Savings">Savings</option>
+            <option value="Gifts">Gifts</option>
+            <option value="Insurance">Insurance</option>
+            <option value="Taxes">Taxes</option>
+            <option value="Education">Education</option>
+            <option value="Subscription">Subscription</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Investment">Investment</option>
+            <option value="Charity">Charity</option>
+            <option value="Salary">Salary</option>
+            <option value="Bonuses">Bonuses</option>
+            <option value="Reimbursements">Reimbursements</option>
+            <option value="Loans">Loans</option>
+            <option value="Debt Repayments">Debt Repayments</option>
+        </InputSelect>
     <InputDate @bind-Value="filterStartDate" class="form-control" />
     <InputDate @bind-Value="filterEndDate" class="form-control" />
-</div>
-
-<!-- Total Transactions Summary -->
-<div class="transaction-summary">
-    <h5>Total Transactions: @totalTransactions</h5>
-    <h5>Total Balance: @totalBalance</h5>
+        <!-- Sortable Date Header -->
+        <button class="dateButton" @onclick="ToggleSortOrder">
+            Date
+            @if (isDateSortedAscending)
+            {
+                <i class="bi bi-arrow-up"></i>
+            }
+            else
+            {
+                <i class="bi bi-arrow-down"></i>
+            }
+        </button>
 </div>
 
 <!-- Transactions Table -->
 <table class="table">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Amount</th>
-            <th>Type</th>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Tags</th>
-            <th>Notes</th>
-            <th>Actions</th>
-        </tr>
+            <tr>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Tags</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
     </thead>
     <tbody>
             @foreach (var transaction in FilteredTransactions)
@@ -78,6 +128,7 @@
     private string filterTags;
     private DateTime? filterStartDate;
     private DateTime? filterEndDate;
+    private bool isDateSortedAscending = true;
 
     private int totalTransactions => transactions.Count;
     // Calculate total income and total expenses separately
@@ -88,13 +139,22 @@
     private decimal totalBalance => totalIncome - totalExpenses;
 
     private IEnumerable<Transaction> FilteredTransactions =>
-        transactions
+    isDateSortedAscending
+        ? transactions
+            .Where(t => (string.IsNullOrEmpty(filterTitle) || t.Title.Contains(filterTitle, StringComparison.OrdinalIgnoreCase)) &&
+                        (string.IsNullOrEmpty(filterType) || t.Type == filterType) &&
+                        (string.IsNullOrEmpty(filterTags) || t.Tags.Contains(filterTags)) &&
+                        (!filterStartDate.HasValue || t.Date >= filterStartDate) &&
+                        (!filterEndDate.HasValue || t.Date <= filterEndDate))
+            .OrderBy(t => t.Date)
+        : transactions
             .Where(t => (string.IsNullOrEmpty(filterTitle) || t.Title.Contains(filterTitle, StringComparison.OrdinalIgnoreCase)) &&
                         (string.IsNullOrEmpty(filterType) || t.Type == filterType) &&
                         (string.IsNullOrEmpty(filterTags) || t.Tags.Contains(filterTags)) &&
                         (!filterStartDate.HasValue || t.Date >= filterStartDate) &&
                         (!filterEndDate.HasValue || t.Date <= filterEndDate))
             .OrderByDescending(t => t.Date);
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -122,6 +182,11 @@
             var allTransactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
             transactions = allTransactions.Where(t => t.UserId == user.UserId.ToString()).ToList();
         }
+    }
+
+    private void ToggleSortOrder()
+    {
+        isDateSortedAscending = !isDateSortedAscending;
     }
 
     private void NavigateToAddTransactionPage()

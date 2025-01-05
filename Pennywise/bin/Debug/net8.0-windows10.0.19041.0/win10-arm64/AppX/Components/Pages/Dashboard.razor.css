@@ -33,6 +33,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row1-item1:hover {
+        background-color: #e1f3f7;
+    }
+
+.header {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.body {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
 }
 
 .row1-item2 {
@@ -46,6 +63,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row1-item2:hover {
+    background-color: #e1f3f7;
 }
 
 .row-2 {
@@ -66,6 +89,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row2-item1:hover {
+    background-color: #e1f3f7;
 }
 
 .row2-item2 {
@@ -79,7 +108,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.row2-item2:hover {
+    background-color: #e1f3f7;
+}
+
 
 .row2-item3 {
     height: 80%;
@@ -92,7 +128,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.row2-item3:hover {
+    background-color: #e1f3f7;
+}
+
 
 .row-3 {
     height: 130px;
@@ -112,7 +155,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.row3-item1:hover {
+    background-color: #e1f3f7;
+}
+
 
 .row3-item2 {
     height: 80%;
@@ -125,7 +175,90 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.row3-item2:hover {
+    background-color: #e1f3f7;
+}
+
+.row3-item3 {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row3-item3:hover {
+        background-color: #e1f3f7;
+    }
+
+.row3-item4 {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row3-item4:hover {
+        background-color: #e1f3f7;
+    }
+
+.row3-item5 {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row3-item5:hover {
+        background-color: #e1f3f7;
+    }
+
+.row3-item6 {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row3-item6:hover {
+        background-color: #e1f3f7;
+    }
+
 
 p {
     font-weight: bold;
@@ -149,8 +282,10 @@ p {
     margin: 0.5%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 15px;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .row4-item2 {
@@ -164,20 +299,43 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .recent-transactions {
     margin-top: 15px;
 }
 
+.recent-debts {
+    margin-top: 15px;
+    align-items:start;
+}
+
 .transaction-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: cemt;
+    justify-content: space-between;
+
+}
+
+.debt-item {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
     .transaction-item p {
         margin: 5px 0;
     }
+
+.dAmount {
+    color: #4caf50;
+}
+
+.row4-header {
+    font-size: 30px;
+    font-weight: bold;
+}

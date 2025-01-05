@@ -16,7 +16,8 @@ i {
 
 
 
-h3 {
+p {
+    font-size: 35px;
     font-weight: bolder;
 }
 
@@ -28,8 +29,58 @@ h3 {
     margin-bottom: 20px;
 }
 
-.transaction-summary h5 {
-    margin-bottom: 20px;
+.transaction-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.row1-item1 {
+    height: 80%;
+    width: 27%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row1-item1:hover {
+        background-color: #e1f3f7;
+    }
+
+.row1-item2 {
+    height: 80%;
+    background-color: #e1fae1;
+    border: 1px solid rgb(200, 199, 199);
+    border-radius: 20px;
+    width: 27%;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .row1-item2:hover {
+        background-color: #e1f3f7;
+    }
+.header {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.body {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
 }
 
 .table {
@@ -72,5 +123,29 @@ h3 {
     .add-transaction-btn:focus {
         outline: none; /* Remove focus outline */
         box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus ring */
+    }
+
+
+.dateButton {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove borders */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 4px; /* Rounded corners */
+    display: inline-flex; /* Make content inline-flex */
+    align-items: center; /* Center text and icon vertically */
+    justify-content: center; /* Center text and icon horizontally */
+    gap: 5px; /* Space between text and icon */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+    .dateButton:hover {
+        background-color: #45a049; /* Slightly darker green on hover */
+    }
+
+    .dateButton i {
+        margin-left: 5px; /* Optional: Adjust spacing between text and icon */
     }
 

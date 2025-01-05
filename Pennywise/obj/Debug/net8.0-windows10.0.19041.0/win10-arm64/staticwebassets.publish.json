@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q2FdvhidG3az1+WQeSeDaDV2KufshtcSO4wfrMEhGKU=",
+  "Hash": "ODgPYNe6jeTFePGXLKsUzal+S0W5FiZxxTssGmxosy8=",
   "Source": "Pennywise",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "7fogqfp4c0",
-      "Integrity": "o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0=",
+      "Fingerprint": "5mot3ud23i",
+      "Integrity": "3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\bundle\\Pennywise.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "7fogqfp4c0",
-      "Integrity": "o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0=",
+      "Fingerprint": "5mot3ud23i",
+      "Integrity": "3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css"
@@ -576,7 +576,7 @@
       ]
     },
     {
-      "Route": "Pennywise.7fogqfp4c0.bundle.scp.css",
+      "Route": "Pennywise.5mot3ud23i.bundle.scp.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -586,7 +586,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17932"
+          "Value": "23648"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0=\""
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 19:08:07 GMT"
+          "Value": "Sun, 05 Jan 2025 17:50:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,7 +608,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7fogqfp4c0"
+          "Value": "5mot3ud23i"
         },
         {
           "Name": "label",
@@ -616,12 +616,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0="
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
         }
       ]
     },
     {
-      "Route": "Pennywise.7fogqfp4c0.styles.css",
+      "Route": "Pennywise.5mot3ud23i.styles.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-arm64\\scopedcss\\bundle\\Pennywise.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -631,7 +631,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17932"
+          "Value": "23648"
         },
         {
           "Name": "Content-Type",
@@ -639,11 +639,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0=\""
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 19:08:07 GMT"
+          "Value": "Sun, 05 Jan 2025 17:50:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -653,7 +653,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7fogqfp4c0"
+          "Value": "5mot3ud23i"
         },
         {
           "Name": "label",
@@ -661,7 +661,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0="
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
         }
       ]
     },
@@ -676,7 +676,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17932"
+          "Value": "23648"
         },
         {
           "Name": "Content-Type",
@@ -684,11 +684,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0=\""
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 19:08:07 GMT"
+          "Value": "Sun, 05 Jan 2025 17:50:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -698,7 +698,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0="
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
         }
       ]
     },
@@ -713,7 +713,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17932"
+          "Value": "23648"
         },
         {
           "Name": "Content-Type",
@@ -721,11 +721,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0=\""
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 19:08:07 GMT"
+          "Value": "Sun, 05 Jan 2025 17:50:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +735,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-o2WTan4aN9UPwqJMvyFuB4Ool7k/obmpjAnX+hRPhG0="
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
         }
       ]
     }

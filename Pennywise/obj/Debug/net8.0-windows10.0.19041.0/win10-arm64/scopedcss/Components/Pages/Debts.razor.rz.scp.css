@@ -7,6 +7,11 @@ body[b-s80mwxzd69] {
     margin-left: 250px;
 }
 
+p[b-s80mwxzd69] {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
 .heading[b-s80mwxzd69] {
     display: flex;
     align-items: center;
@@ -105,7 +110,7 @@ th[b-s80mwxzd69] {
     background-color: #a72828;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 5px 12px;
     border-radius: 5px;
     cursor: pointer;
 }
