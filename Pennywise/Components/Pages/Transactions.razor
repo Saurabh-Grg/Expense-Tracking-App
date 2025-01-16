@@ -23,10 +23,6 @@
             <p class="header">Total Transactions</p>
             <p class="body">@totalTransactions</p>
         </div>
-        <div class="row1-item2">
-            <p class="header">Total Balance</p>
-            <p class="body">Rs @totalBalance</p>
-        </div>
     </div>
 
 <!-- Transaction Filtering -->
@@ -131,12 +127,7 @@
     private bool isDateSortedAscending = true;
 
     private int totalTransactions => transactions.Count;
-    // Calculate total income and total expenses separately
-    private decimal totalIncome => transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
-    private decimal totalExpenses => transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
 
-    // Calculate balance as total income minus total expenses
-    private decimal totalBalance => totalIncome - totalExpenses;
 
     private IEnumerable<Transaction> FilteredTransactions =>
     isDateSortedAscending

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OhglFoYQUe+t5U88S+sE8mKiUaeVmog2PCPjwFF/BJQ=",
+  "Hash": "r0yJu30SyItiOuVeDMowR97GHfWGvcSRJIEoNBELhKo=",
   "Source": "Pennywise",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "oe7vtio33y",
-      "Integrity": "QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU=",
+      "Fingerprint": "5mot3ud23i",
+      "Integrity": "3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "oe7vtio33y",
-      "Integrity": "QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU=",
+      "Fingerprint": "5mot3ud23i",
+      "Integrity": "3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css"
@@ -576,6 +576,96 @@
       ]
     },
     {
+      "Route": "Pennywise.5mot3ud23i.bundle.scp.css",
+      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 15:30:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5mot3ud23i"
+        },
+        {
+          "Name": "label",
+          "Value": "Pennywise.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
+        }
+      ]
+    },
+    {
+      "Route": "Pennywise.5mot3ud23i.styles.css",
+      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 15:30:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5mot3ud23i"
+        },
+        {
+          "Name": "label",
+          "Value": "Pennywise.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
+        }
+      ]
+    },
+    {
       "Route": "Pennywise.bundle.scp.css",
       "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
       "Selectors": [],
@@ -586,7 +676,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17623"
+          "Value": "23648"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +684,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU=\""
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 17:37:18 GMT"
+          "Value": "Sun, 12 Jan 2025 15:30:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,97 +698,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU="
-        }
-      ]
-    },
-    {
-      "Route": "Pennywise.oe7vtio33y.bundle.scp.css",
-      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\Pennywise.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "17623"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 17:37:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oe7vtio33y"
-        },
-        {
-          "Name": "label",
-          "Value": "Pennywise.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU="
-        }
-      ]
-    },
-    {
-      "Route": "Pennywise.oe7vtio33y.styles.css",
-      "AssetFile": "C:\\Users\\DestinySG\\source\\repos\\Pennywise\\Pennywise\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\Pennywise.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "17623"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 17:37:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oe7vtio33y"
-        },
-        {
-          "Name": "label",
-          "Value": "Pennywise.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU="
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
         }
       ]
     },
@@ -713,7 +713,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17623"
+          "Value": "23648"
         },
         {
           "Name": "Content-Type",
@@ -721,11 +721,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU=\""
+          "Value": "\"3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 04 Jan 2025 17:37:18 GMT"
+          "Value": "Sun, 12 Jan 2025 15:30:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +735,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QDy8Hvhp9p1ULSsrV7v7xU8cCMjEeSXAfuNBELZRmfU="
+          "Value": "sha256-3YxsH9ntPjMbgAB12kEy0O7qcUSVZZnQswV7+jZCHSc="
         }
       ]
     }

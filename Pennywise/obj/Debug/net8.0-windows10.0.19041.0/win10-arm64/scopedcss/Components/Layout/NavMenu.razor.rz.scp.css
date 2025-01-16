@@ -34,7 +34,7 @@ button[b-16uq8voqdr] {
     border: none;
     color: white;
     text-align: left;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -43,7 +43,7 @@ button[b-16uq8voqdr] {
         border-radius: 5px;
     }
 
-    button:active[b-16uq8voqdr] {
+    button:focus[b-16uq8voqdr] {
         background-color: green;
         border-radius: 5px;
     }

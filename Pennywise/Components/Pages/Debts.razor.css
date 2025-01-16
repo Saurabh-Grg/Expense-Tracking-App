@@ -1,8 +1,7 @@
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
     color: #343a40;
     margin-left: 250px;
 }
@@ -50,13 +49,14 @@ p {
 }
 
     .summary .card {
-        background-color: #f1f3f5;
+        background-color: #f1f8f1;
         padding: 20px;
         border-radius: 8px;
         text-align: center;
         margin-bottom: 30px;
         width: 30%;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: none;
     }
 
         .summary .card h2 {

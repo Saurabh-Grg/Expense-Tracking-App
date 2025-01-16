@@ -13,6 +13,12 @@
         <p>Debt Management</p>
         <button class="add-debt-btn" @onclick="NavigateToAddDebtForm"><i class="bi bi-plus"></i>Add Debt</button>
     </div>
+    @if (!string.IsNullOrEmpty(alertMessage))
+    {
+        <div class="alert alert-warning" role="alert">
+            @alertMessage
+        </div>
+    }
 
     <!-- Summary Section -->
     <div class="summary">
@@ -25,7 +31,7 @@
             <p>Cleared Debts</p>
         </div>
         <div class="card">
-            <h2>Rs @pendingDebts</h2>
+            <h2>Rs @remainingDebts</h2>
             <p>Pending Debts</p>
         </div>
     </div>
@@ -66,7 +72,7 @@
                             <td>
                                 @if (debt.Status == "Pending")
                                 {
-                                    <button class="action-btn" @onclick="() => ClearDebt(debt)">Clear</button>
+                                    <button class="action-btn" @onclick="() => ClearDebtAsync(debt)">Clear</button>
                                 }
                             </td>
                         </tr>
@@ -84,35 +90,51 @@
 </body>
 
 @code {
+    private string alertMessage = string.Empty;
+
+    private List<Transaction> transactions = new List<Transaction>();
     private List<Debt> debts = new List<Debt>();
 
-    private decimal totalDebts => debts.Where(d => d.Status != "Cleared").Sum(d => d.Amount);
+    private decimal totalInflows => transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+    private decimal totalOutflows => transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
+
+    private decimal totalDebts => debts.Sum(d => d.Amount);
     private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
-    private decimal pendingDebts => totalDebts - clearedDebts;
+    private decimal remainingDebts => totalDebts - clearedDebts;
+
+    private decimal totalBalance => totalInflows + remainingDebts - totalOutflows;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            // Load Transactions
+            var transactionFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
+            if (File.Exists(transactionFilePath))
+            {
+                var transactionJson = await File.ReadAllTextAsync(transactionFilePath);
+                transactions = string.IsNullOrWhiteSpace(transactionJson)
+                    ? new List<Transaction>()
+                    : JsonConvert.DeserializeObject<List<Transaction>>(transactionJson) ?? new List<Transaction>();
+
+                // Debugging - Print Transactions
+                Debug.WriteLine("Transactions:");
+                foreach (var transaction in transactions)
+                {
+                    Debug.WriteLine($"Transaction - Title: {transaction.Title}, Type: {transaction.Type}, Amount: {transaction.Amount}, Date: {transaction.Date}");
+                }
+            }
+
+            // Load Debts
             var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
             var filePath = Path.Combine(baseDirectory, "debts.json");
 
-            if (File.Exists(filePath))
-            {
-                var json = await File.ReadAllTextAsync(filePath);
-                debts = string.IsNullOrWhiteSpace(json)
-                    ? new List<Debt>()
-                    : JsonConvert.DeserializeObject<List<Debt>>(json) ?? new List<Debt>();
-            }
-            else
-            {
-                Debug.WriteLine("Debt file does not exist.");
-                debts = new List<Debt>();
-            }
+            var json = await File.ReadAllTextAsync(filePath);
+            debts = JsonConvert.DeserializeObject<List<Debt>>(json) ?? new List<Debt>();
         }
         catch (Exception ex)
         {
-            Debug.WriteLine($"Error loading debts: {ex.Message}");
+            Debug.WriteLine($"Error loading data: {ex.Message}");
         }
     }
 
@@ -121,14 +143,33 @@
         Navigator.NavigateTo("/add-debt");
     }
 
-    private void ClearDebt(Debt debt)
+    private async Task ClearDebtAsync(Debt debt)
     {
-        debt.Status = "Cleared";  // Update the debt status to "Cleared"
-        SaveDebtsToFile();
-        StateHasChanged();  // Trigger re-rendering to update the table
+        if (debt == null) return;
+
+        Debug.WriteLine(totalBalance);
+
+        if (totalBalance >= debt.Amount)
+        {
+            debt.Status = "Cleared";  // Update the debt status to "Cleared"
+            await SaveDebtsToFileAsync();
+            StateHasChanged();
+
+            alertMessage = "Debt cleared successfully.";
+        }
+        else
+        {
+            alertMessage = "You don't have enough balance to clear the debt.";
+        }
+
+        // Clear the alert message after a delay
+        await Task.Delay(3000); // Adjust the delay time as needed
+        alertMessage = string.Empty;
+        StateHasChanged();
     }
 
-    private async void SaveDebtsToFile()
+
+    private async Task SaveDebtsToFileAsync()
     {
         try
         {

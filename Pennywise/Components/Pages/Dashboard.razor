@@ -10,107 +10,117 @@
 @using System.Threading.Tasks
 @using System.Diagnostics
 
-<div class="main-container">
-    <div class="container">
-        <div class="row-0">Dashboard</div>
-        <div class="row-1">
-            <div class="row1-item1">
-                <p class="header">Total Inflows</p>
-                <p class="body">Rs @totalInflows</p>
-            </div>
-            <div class="row1-item2">
-                <p class="header">Total Outflows</p>
-                <p class="body">Rs @totalOutflows</p>
-            </div>
+<div class="dashboard-container">
+    <div class="header-section">
+        <h1>Dashboard</h1>
+        <p>Your financial overview at a glance</p>
+    </div>
+    <div class="totalBalance-section">
+        <p class="circle-header">Your Balance</p>
+        <p class="circle-value">Rs @totalBalance</p>
+    </div>
+
+    <h2>Financial Overview</h2>
+    <div class="overview-section">
+        <div class="circle-overview inflow">
+            <p class="circle-header">Inflows</p>
+            <p class="circle-value">Rs @totalInflows</p>
         </div>
-        <div class="row-2">
-            <div class="row2-item1">
-                <p class="header">Total Debts</p>
-                <p class="body">Rs @totalDebts</p>
-            </div>
-            <div class="row2-item2">
-                <p class="header">Cleared Debts</p>
-                <p class="body">Rs @clearedDebts</p>
-            </div>
-            <div class="row2-item3">
-                <p class="header">Remaining Debts</p>
-                <p class="body">Rs @remainingDebts</p>
-            </div>
+        <div class="circle-overview outflow">
+            <p class="circle-header">Outflows</p>
+            <p class="circle-value">Rs @totalOutflows</p>
         </div>
-        <div class="row-3">
-            <div class="row3-item1">
-                <p class="header">Highest Inflow</p>
-                <p class="body">Rs @highestInflow</p>
-            </div>
-            <div class="row3-item2">
-                <p class="header">Lowest Inflow</p>
-                <p class="body">Rs @lowestInflow</p>
-            </div>
-            <div class="row3-item3">
-                <p class="header">Highest Outflow</p>
-                <p class="body">Rs @highestOutflow</p>
-            </div>
-            <div class="row3-item4">
-                <p class="header">Lowest Outflow</p>
-                <p class="body">Rs @lowestOutflow</p>
-            </div>
-            <div class="row3-item5">
-                <p class="header">Highest Debt</p>
-                <p class="body">Rs @highestDebt</p>
-            </div>
-            <div class="row3-item6">
-                <p class="header">Lowest Debt</p>
-                <p class="body">Rs @lowestDebt</p>
-            </div>
+        <div class="circle-overview debts">
+            <p class="circle-header">Debts</p>
+            <p class="circle-value">Rs @totalDebts</p>
         </div>
-        <div class="row-4">
-            <div class="row4-item1">
-                <p class="row4-header">Pending Debts</p>
-                <div class="recent-debts">
-                    @if (debts.Any())
+    </div>
+
+    <h2>Key Statistics</h2>
+    <div class="statistics-section">
+            
+            <div class="stat-box">
+                <h3>Highest Inflow</h3>
+                <p>Rs @highestInflow</p>
+            </div>
+            <div class="stat-box">
+                <h3>Lowest Inflow</h3>
+                <p>Rs @lowestInflow</p>
+            </div>
+            <div class="stat-box">
+                <h3>Highest Outflow</h3>
+                <p>Rs @highestOutflow</p>
+            </div>
+            <div class="stat-box">
+                <h3>Lowest Outflow</h3>
+                <p>Rs @lowestOutflow</p>
+            </div>
+            <div class="stat-box">
+                <h3>Highest Debt</h3>
+                <p>Rs @highestDebt</p>
+            </div>
+            <div class="stat-box">
+                <h3>Lowest Debt</h3>
+                <p>Rs @lowestDebt</p>
+            </div>
+        <div class="stat-box">
+            <h3>Cleared Debts</h3>
+            <p>Rs @clearedDebts</p>
+        </div>
+        <div class="stat-box">
+            <h3>Remaining Debts</h3>
+            <p>Rs @remainingDebts</p>
+        </div>
+    </div>
+
+
+    <div class="recent-section">
+        <div class="recent-transactions">
+            <h2>Recent Transactions</h2>
+            <div class="scrollable">
+                @if (transactions.Any())
+                {
+                    @foreach (var transaction in transactions.OrderByDescending(t => t.Date))
                     {
-                        @foreach (var debt in debts.Where(d => d.Status == "Pending").OrderByDescending(d => d.Date).Take(3))
-                        {
-                            <div class="debt-item">
-                                <div>
-                                    <p><strong>@debt.Title</strong> (@debt.Source)</p>
-                                    <p>@debt.Date.ToShortDateString()</p>
-                                </div>
-                                <div>
-                                    <p class="dAmount">- Rs @debt.Amount</p>
-                                </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <p><strong>@transaction.Title</strong> (@transaction.Type)</p>
+                                <p>@transaction.Date.ToShortDateString()</p>
                             </div>
-                        }
-                    }
-                    else
-                    {
-                        <p>No pending debts.</p>
-                    }
-                </div>
-            </div>
-            <div class="row4-item2">
-                <p class="row4-header">Recent Transactions</p>
-                <div class="recent-transactions">
-                    @if (transactions.Any())
-                    {
-                        @foreach (var transaction in transactions.OrderByDescending(t => t.Date).Take(4))
-                        {
-                            <div class="transaction-item">
-                                <div>
-                                    <p><strong>@transaction.Title</strong> (@transaction.Type)</p>
-                                    <p>@transaction.Date.ToShortDateString()</p>
-                                </div>
-                                <div>
-                                    <p class="dAmount">- Rs @transaction.Amount</p>
-                                </div>
+                            <div class="transaction-amount">
+                                <p>- Rs @transaction.Amount</p>
                             </div>
-                        }
+                        </div>
                     }
-                    else
+                }
+                else
+                {
+                    <p>No transactions available.</p>
+                }
+            </div>
+        </div>
+        <div class="recent-debts">
+            <h2>Pending Debts</h2>
+            <div class="scrollable">
+                @if (debts.Any())
+                {
+                    @foreach (var debt in debts.Where(d => d.Status == "Pending").OrderByDescending(d => d.Date))
                     {
-                        <p>No transactions available.</p>
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <p><strong>@debt.Title</strong> (@debt.Source)</p>
+                                <p>@debt.Date.ToShortDateString()</p>
+                            </div>
+                            <div class="debt-amount">
+                                <p>- Rs @debt.Amount</p>
+                            </div>
+                        </div>
                     }
-                </div>
+                }
+                else
+                {
+                    <p>No pending debts.</p>
+                }
             </div>
         </div>
     </div>
@@ -125,6 +135,8 @@
     private decimal totalDebts => debts.Sum(d => d.Amount);
     private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
     private decimal remainingDebts => totalDebts - clearedDebts;
+
+    private decimal totalBalance => totalInflows + remainingDebts - totalOutflows;
 
     private decimal highestInflow => transactions.Where(t => t.Type == "Income").Any() ? transactions.Where(t => t.Type == "Income").Max(t => t.Amount) : 0;
 
@@ -160,21 +172,11 @@
             }
 
             // Load Debts
-            var debtFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData", "debts.json");
-            if (File.Exists(debtFilePath))
-            {
-                var debtJson = await File.ReadAllTextAsync(debtFilePath);
-                debts = string.IsNullOrWhiteSpace(debtJson)
-                    ? new List<Debt>()
-                    : JsonConvert.DeserializeObject<List<Debt>>(debtJson) ?? new List<Debt>();
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            var filePath = Path.Combine(baseDirectory, "debts.json");
 
-                // Debugging - Print Debts
-                Debug.WriteLine("Debts:");
-                foreach (var debt in debts)
-                {
-                    Debug.WriteLine($"Debt - Source: {debt.Source}, Amount: {debt.Amount}, Status: {debt.Status}, Due Date: {debt.DueDate}");
-                }
-            }
+            var json = await File.ReadAllTextAsync(filePath);
+            debts = JsonConvert.DeserializeObject<List<Debt>>(json) ?? new List<Debt>();
         }
         catch (Exception ex)
         {

@@ -1,4 +1,4 @@
-body[b-kl73uw7i6z] {
+.container[b-kl73uw7i6z] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 250px
 }
@@ -11,6 +11,7 @@ h3[b-kl73uw7i6z] {
 .form-group[b-kl73uw7i6z] {
     margin: 10px 20px 10px 10px;
     font-weight: bold;
+    width: 100%;
 }
 
 .btn-success[b-kl73uw7i6z] {

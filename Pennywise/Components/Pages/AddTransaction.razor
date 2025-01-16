@@ -132,7 +132,46 @@
 @code {
     private Transaction newTransaction = new Transaction { Date = DateTime.Now };
     private string alertMessage = string.Empty;
-    private bool isCustomTagMode = false; 
+    private bool isCustomTagMode = false;
+
+    private List<Transaction> transactions = new List<Transaction>();
+    private List<Debt> debts = new List<Debt>();
+
+    private decimal totalInflows => transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+    private decimal totalOutflows => transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
+
+    private decimal totalDebts => debts.Sum(d => d.Amount);
+    private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
+    private decimal remainingDebts => totalDebts - clearedDebts;
+
+    private decimal totalBalance => totalInflows + remainingDebts - totalOutflows;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load Transactions
+        var transactionFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
+        if (File.Exists(transactionFilePath))
+        {
+            var transactionJson = await File.ReadAllTextAsync(transactionFilePath);
+            transactions = string.IsNullOrWhiteSpace(transactionJson)
+                ? new List<Transaction>()
+                : JsonConvert.DeserializeObject<List<Transaction>>(transactionJson) ?? new List<Transaction>();
+
+            // Debugging - Print Transactions
+            Debug.WriteLine("Transactions:");
+            foreach (var transaction in transactions)
+            {
+                Debug.WriteLine($"Transaction - Title: {transaction.Title}, Type: {transaction.Type}, Amount: {transaction.Amount}, Date: {transaction.Date}");
+            }
+        }
+
+        // Load Debts
+        var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+        var filePath = Path.Combine(baseDirectory, "debts.json");
+
+        var json = await File.ReadAllTextAsync(filePath);
+        debts = JsonConvert.DeserializeObject<List<Debt>>(json) ?? new List<Debt>();
+    }
 
     private async Task HandleValidSubmit()
     {
@@ -176,11 +215,11 @@
             }
 
             // Calculate total balance (Income - Expense)
-            var totalIncome = transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
-            var totalExpenses = transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
-            var totalBalance = totalIncome - totalExpenses;
+            // var totalIncome = transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+            // var totalExpenses = transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
+            // var totalBalance = totalIncome - totalExpenses;
 
-            Debug.WriteLine($"Current total balance: {totalBalance}");
+            // Debug.WriteLine($"Current total balance: {totalBalance}");
 
             // Sufficient balance check for outflows
             if (newTransaction.Type == "Expense" && newTransaction.Amount > totalBalance)
